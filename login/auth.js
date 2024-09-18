@@ -1,6 +1,6 @@
 // Import Firebase functions and initialize
 import { initializeApp} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider, OAuthProvider } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider, OAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -24,10 +24,19 @@ if (signUpBtn) {
         const name = document.getElementById('name-input').value;
         const email = document.getElementById('email-input').value;
         const password = document.getElementById('password-input').value;
-        createUserWithEmailAndPassword(auth, name, email, password)
+        console.log(name, email, password);
+        
+        createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Sign-up successful
                 const user = userCredential.user;
+                // Optionally update profile with name
+                updateProfile(user, { displayName: name })
+                    .then(() => {
+                        console.log('User profile updated:', user);
+                    })
+                    .catch((error) => {
+                        console.error('Error updating profile:', error.message);
+                    });
                 console.log('User signed up:', user);
             })
             .catch((error) => {
@@ -39,15 +48,21 @@ if (signUpBtn) {
 // Sign in function
 const signInBtn = document.getElementById('sign-in');
 signInBtn.addEventListener('click', () => {
+    console.log("clicked");
+    console.log("clicked");
+    
     const email = document.querySelector('.input[type="text"]').value;
     const password = document.querySelector('.input[type="password"]').value;
+    
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Sign-in successful
+            console.log("loggedin");
             const user = userCredential.user;
+            window.location.href = "data.html";
             console.log('User signed in:', user);
         })
         .catch((error) => {
+            console.log(error.code);
             console.error('Error signing in:', error.message);
         });
 });
@@ -58,7 +73,6 @@ googleBtn.addEventListener('click', () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
         .then((result) => {
-            // Google sign-in successful
             console.log('Google sign-in:', result.user);
         })
         .catch((error) => {
@@ -72,7 +86,6 @@ appleBtn.addEventListener('click', () => {
     const provider = new OAuthProvider('apple.com');
     signInWithPopup(auth, provider)
         .then((result) => {
-            // Apple sign-in successful
             console.log('Apple sign-in:', result.user);
         })
         .catch((error) => {
