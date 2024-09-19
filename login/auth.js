@@ -30,7 +30,7 @@ if (signUpBtn) {
             .then((userCredential) => {
                 const user = userCredential.user;
                 // Optionally update profile with name
-                updateProfile(user, { displayName: name })
+                updateProfile(user)
                     .then(() => {
                         console.log('User profile updated:', user);
                     })
@@ -74,21 +74,9 @@ googleBtn.addEventListener('click', () => {
     signInWithPopup(auth, provider)
         .then((result) => {
             console.log('Google sign-in:', result.user);
+            window.location.href="data.html";
         })
         .catch((error) => {
             console.error('Error signing in with Google:', error.message);
-        });
-});
-
-// Apple sign-in
-const appleBtn = document.getElementById('apple-btn');
-appleBtn.addEventListener('click', () => {
-    const provider = new OAuthProvider('apple.com');
-    signInWithPopup(auth, provider)
-        .then((result) => {
-            console.log('Apple sign-in:', result.user);
-        })
-        .catch((error) => {
-            console.error('Error signing in with Apple:', error.message);
         });
 });
