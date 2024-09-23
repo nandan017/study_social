@@ -1,6 +1,6 @@
 // Import Firebase functions and initialize
 import { initializeApp} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider, OAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider,signInWithPopup } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -29,8 +29,9 @@ if (signUpBtn) {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                window.location.href = 'data.html'
                 // Optionally update profile with name
-                updateProfile(user)
+                updateProfile(user,{ displayName: name })
                     .then(() => {
                         console.log('User profile updated:', user);
                     })
@@ -79,4 +80,14 @@ googleBtn.addEventListener('click', () => {
         .catch((error) => {
             console.error('Error signing in with Google:', error.message);
         });
+});
+
+// toggle password
+document.getElementById('togglebtn').addEventListener("click",function(){
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
 });

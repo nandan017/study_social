@@ -7,6 +7,10 @@
   font-family: "Bigwhale";
   src: url(/login/assets/Bigwhale.otf);
 }
+@font-face {
+  font-family: "googlesans";
+  src: url(/login/assets/google-sans-webfont/ProductSans-Regular.woff);
+}
 *{
     margin: 0%;
     padding: 0%;
@@ -75,7 +79,17 @@
     padding-left: 10px;
     transition: 0.2s ease-in-out;
   }
-  
+  #togglebtn{
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    background-image: url(/login/assets/eye-open-svgrepo-com.svg);
+    background-color: transparent;
+    color: black;
+    background-size: 28px;
+    border: transparent;
+    background-repeat: no-repeat;
+  }
   .input {
     margin-left: 10px;
     border-radius: 10px;
@@ -105,7 +119,31 @@
     color: black;
     font-weight: 400;
   }
-  
+.google{
+  text-align: center;
+  max-inline-size: 90rem;
+}
+
+input#google-btn{
+  height: 3.5rem;
+  width: 100%;
+  max-width: 27rem;
+  background-color: white;
+  color: black;
+  border: #151717 solid 2px;
+  font-size: 16px;
+  font-family: "googlesans";
+  font-weight: 900;
+  border-radius: 10px;
+  cursor: pointer;
+  background-image: url(/login/assets/icons8-google-logo.svg);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 30px;
+}
+#google-btn:hover{
+  background-color: lightgray;
+}
   .span {
     font-size: 14px;
     margin-left: 5px;
@@ -248,5 +286,91 @@
 .form-2 button:hover {
   background-color: #252727;
 }
+
+
+/* media query */
+/* For large screens, bigger than 1280px */
+@media screen and (min-width: 1281px) {
+  .vcontainer {
+      padding: 10vh;
+  }
+  .form {
+      width: 500px;
+      padding: 40px;
+  }
+  #codify {
+      font-size: 12vh;
+  }
+  input#google-btn {
+      width: 30rem;
+  }
+}
+
+/* Styles for tablets and laptops (768px to 1440px wide) */
+@media only screen and (min-width: 768px) and (max-width: 1440px) {
+  .login-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 10vh;
+      gap: 50px; /* Adjust the gap between the logo and the form */
+  }
+
+  #codify {
+      font-size: 8vh;
+      text-align: left;
+  }
+
+  .form {
+      width: 400px;
+  }
+
+  .cylogo {
+      margin-right: 50px; /* Gap between the logo and the form */
+  }
+}
+
+
+/* For mobile devices, between 480px and 767px */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .vcontainer {
+      padding: 5vh;
+  }
+  .form {
+      width: 300px;
+      padding: 20px;
+  }
+  #codify {
+      font-size: 5vh;
+  }
+  input#google-btn {
+      width: 20rem;
+      font-size: 14px;
+  }
+}
+
+/* For small mobile devices, less than 480px */
+@media screen and (max-width: 479px) {
+  .vcontainer {
+      padding: 5vh;
+  }
+  .form {
+      width: 100%;
+      padding: 15px;
+  }
+  #codify {
+      font-size: 5vh;
+  }
+  input#google-btn {
+      width: 100%;
+      font-size: 14px;
+  }
+  .login-container {
+      flex-direction: column;
+      padding: 10vh 0;
+  }
+}
+
 
       
