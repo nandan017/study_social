@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');
+@font-face {
+    font-family: "newtitle";
+    src: url(/fonts/NewTitle_Complete/Fonts/OTF/NewTitle-Regular.otf);
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #9082f7;
+    border-radius: 10px;
+}
+.logo {
+  font-family: "newtitle";
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.container1{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    font-size: 30px;
+    padding-top: 1rem;
+}
+
+svg{
+    width: 6.6dvw;
+    height: 6.6dvh;
+    cursor: pointer;
+}
+.wrap{
+    display: flex;
+    min-width: 240px;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button{
+    background-color: #9082f7;
+    border-radius: 8px;
+    height: 7dvh;
+    width: 12dvw;
+    font-family: "Martian Mono", monospace;
+    font-size: medium;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
+.heading{
+    display: flex;
+    max-width: 100vw;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+#resources-heading{
+    color: #fff;
+    font-family: "newtitle";
+    font-size: 11rem;
+    font-weight: 500;   
+}
+
+.res-head{
+    display: flex;
+}
+
+.res-head{
+    padding: 1rem 1.5rem;
+    font-family: "newtitle";
+    font-size: 3rem;
+    margin: 5vh;
+    border-bottom: 1px solid #fff;
+}
+
+#subject{
+    color: #9082f7;
+}
+
+.res-in{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#sub-img{
+    height: 30vh;
+    max-width: 30vw;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px  #282828 ,-2px -2px 15px  #5a5757 ;
+    
+}
+#about{
+    color: #fff;
+    font-family: "Martian Mono";
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+
+.layer1{
+    display: flex;
+    color: aliceblue;
+    justify-content: space-around;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-radius: 2px;
+    padding: 15vh 5vh;
+    margin: 10vh;
+}
+
+.head{
+    font-family: "newtitle";
+    font-size: 4rem;
+    color: #9082f7;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    font-size: 1rem;
+    font-family: "Martian Mono", monospace;
+    line-height: 2rem;
+}
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
