@@ -29,7 +29,7 @@ if (signUpBtn) {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                window.location.href = 'data.html'
+                window.location.href = '../index.html'
                 // Optionally update profile with name
                 updateProfile(user,{ displayName: name })
                     .then(() => {
@@ -59,7 +59,8 @@ signInBtn.addEventListener('click', () => {
         .then((userCredential) => {
             console.log("loggedin");
             const user = userCredential.user;
-            window.location.href = "data.html";
+
+            window.location.href = "../index.html";
             console.log('User signed in:', user);
         })
         .catch((error) => {
@@ -75,6 +76,7 @@ googleBtn.addEventListener('click', () => {
     signInWithPopup(auth, provider)
         .then((result) => {
             console.log('Google sign-in:', result.user);
+            window.location.href="../index.html";
         })
         .catch((error) => {
             console.error('Error signing in with Google:', error.message);
