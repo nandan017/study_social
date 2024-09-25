@@ -29,7 +29,7 @@ if (signUpBtn) {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                window.location.href = 'study_social/index.html'
+                window.location.href = '../index.html'
                 // Optionally update profile with name
                 updateProfile(user,{ displayName: name })
                     .then(() => {
@@ -59,7 +59,7 @@ signInBtn.addEventListener('click', () => {
         .then((userCredential) => {
             console.log("loggedin");
             const user = userCredential.user;
-            window.location.href = "study_social/index.html";
+            window.location.href = "../index.html";
             console.log('User signed in:', user);
         })
         .catch((error) => {
