@@ -36,9 +36,9 @@
     padding-top: 1rem;
 }
 
-svg{
-    width: 8dvw;
-    height: 8dvh;
+.p{
+    width: 6.6dvw;
+    height: 6.6dvh;
     cursor: pointer;
 }
 .wrap{
@@ -74,11 +74,29 @@ button:hover{
     grid-area: 2/1/3/4;
     text-align: center;
     align-content: center;
+    letter-spacing: 2rem;
+    font-weight: 600;
     font-family: "newtitle";
     color: #fff;
     font-size: 20rem; 
     position: relative;
-    bottom: 80px;
+    bottom: 7.5rem;
+}
+.purple{
+    position: absolute;
+    max-width: 99dvw;
+    height: 60dvh;   
+}
+
+#vid{
+    max-inline-size: 100dvw;
+    max-width: 99dvw;
+    max-height: 57dvh;
+}
+.white{
+    background-color: #000;
+    mix-blend-mode: multiply;
+    width: 99dvw;
 }
 #html{
     grid-area: 1/3/2/4;
@@ -188,7 +206,6 @@ button:hover{
     font-weight: 400; 
 }
 .cont3{
-    
     padding:0 2.4rem;
 }
 
@@ -198,7 +215,7 @@ button:hover{
     grid-template-columns: 2fr 2fr;
     grid-template-rows: 2fr 2fr;
     row-gap: 2rem;
-    column-gap: 3rem;
+    column-gap: 1.5rem;
     min-width: 100%;
     padding-bottom: 8rem;
     max-inline-size: 90vw;
@@ -210,13 +227,14 @@ button:hover{
     margin: 2rem;
     transition-property:transform;
     transition-duration: 0.5s;
+    padding: 1rem;
 }
 
 .smallc:hover{
     transform: translateY(-1rem); 
     cursor: pointer;
     border: 2px solid grey;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 .thumb{
     width: 100%;
@@ -250,7 +268,7 @@ button:hover{
 
 .button2{
     text-align: center;
-    padding-bottom: 6rem;   
+    padding-bottom: 6rem;  
 }
 
 .us{
@@ -263,13 +281,14 @@ button:hover{
 
 .aboutus{
     color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: span 3;
+    justify-items: center;
     width: 100%;
     justify-content: space-evenly;
     margin-bottom: 15vh;
-    
+    overflow: auto;
 }
 
 .profile{
@@ -278,7 +297,8 @@ button:hover{
 }
 
 .person{
-    max-inline-size: 22vw;
+    padding-top: 1rem;
+    max-inline-size: 27vw;
     padding-bottom: 2rem;
 }
 
@@ -303,7 +323,6 @@ button:hover{
 }
 
 .inside{
-    
     border-radius: 20px;
     padding: 10px;
     box-shadow: 4px 4px 25px  #282828 ,-4px -4px 25px  #5a5757 ;
@@ -365,12 +384,344 @@ a{
 }
 
 @keyframes pop-up {
-    from{
-        scale: 0;
-        opacity: 0%;
-    }    
-    to{
-        scale: 1;
-        opacity: 100%;
+    from {
+        transform: scale(0);
+        opacity: 0;
     }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+/* Responsive Media Queries */
+
+/* Large Desktops and Wide Screens (min-width: 1200px) */
+/* No changes needed as the default styles are already optimized for large screens */
+
+/* Desktops and Laptops (min-width: 992px and max-width: 1199px) */
+@media (max-width: 1440px) and (min-width: 1024px) {
+
+    .logo-float {
+        font-size: 19rem;
+        bottom: 6rem;
+    }
+
+    .logos {
+        width: 15vw;
+    }
+
+    .info {
+        font-size: 1rem;
+        bottom: 3rem;
+    }
+
+    .purple{
+        position: absolute;
+        width: 98dvw;
+        height: 60dvh;   
+        top: 0.1rem;
+    }
+    
+    #vid{
+        max-inline-size: 98dvw;
+        width: 98dvw;
+        max-height:60dvh;
+    }
+
+    .layer1 {
+        flex-direction: row;
+        padding: 10vh 3vh;
+    }
+}
+
+/* Tablets (min-width: 768px and max-width: 991px) */
+@media (max-width: 1023px) and (min-width: 800px) {
+    .container1 {
+        align-items: center;
+        padding: 0 2rem;
+        font-size: 2rem;
+    }
+    .nm{
+        font-size: 18rem;
+    }
+    button{
+        width: 8rem;
+        height: 3rem;
+    }
+    .p{
+        height: 2.5rem;
+    }
+    .purple{
+        position: absolute;
+        max-width: 98dvw;
+        max-height: 60dvh;  
+        top: 0.1rem; 
+    }
+    
+    #vid{
+        position: relative;
+        max-inline-size: 98dvw;
+        min-width: 98dvw;
+        max-height:26.38dvh;
+    }
+
+    .wrap {
+        align-items: center;
+        min-width: 200px;
+    }
+
+    .wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3, minmax(10vw, auto));
+    }
+
+    .logo-float {
+        font-size: 10rem;
+        bottom: 5rem;
+    }
+
+    .logos {
+        width: 20vw;
+        margin: 1rem 0;
+    }
+
+    .info {
+        font-size: 0.9rem;
+        bottom: 4rem;
+    }
+
+    .aboutus {
+        grid-template-columns:1fr  1fr ;
+        grid-column: span 2;
+        margin-bottom: 10vh;
+    }
+    .person{
+        max-inline-size: 40vw;
+    }
+    
+    .layer1 {
+        padding: 8vh 2vh;
+    }
+
+    .head {
+        font-size: 2.5rem;
+    }
+
+    .links {
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+    }
+
+    .text {
+        animation: slide-right ease-in-out 1s 1;
+        animation-timeline: view();
+        animation-range: entry 0% cover 60%;
+        font-size: 6rem;
+        padding-bottom: 30vh;
+    }
+
+    .yt {
+        font-size: 5rem;
+        padding-left: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .videos {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 2fr);
+        max-inline-size: 100vw;
+    }
+
+    .smallc {
+        max-inline-size: 80vw;
+        margin: 1rem;
+    }
+
+    .us {
+        font-size: 10vh;
+        padding: 3rem;
+    }
+    .profile{
+        height: 15dvh;
+    }
+    .animation4{
+        animation: pop-up ease-in-out 1s 1;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+    }    
+}
+
+/* Mobile Phones (max-width: 767px) */
+@media (max-width: 768px) and (min-width:350px){
+    * {
+        background-color: #000; /* Retain the background color */
+    }
+
+    .container1 {
+        align-items: center;
+        padding: 0 1rem;
+        font-size: 18px;    
+    }
+
+    .wrap {
+        align-items: center;
+        min-width: 150px;
+        padding-top: 5px;
+    }
+
+    button {
+        width: 21vw;
+        font-size: 0.6rem;
+        height: 5vh;
+        
+    }
+    .p{
+        height:fit-content;
+    }
+
+    .wrapper {
+        padding-top: 2.5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, minmax(10vw, auto));
+    }
+
+    .logo-float {
+        font-size: 8rem;
+        bottom: 5rem;
+        right: -1rem;
+        letter-spacing: 1rem;
+    }
+    .purple{
+        position: absolute;
+        max-width: 98dvw;
+        max-height: 60dvh;  
+        top: 0.1rem; 
+    }
+    
+    #vid{
+        position: relative;
+        max-inline-size: 98dvw;
+        min-width: 98dvw;
+        max-height:17.13dvh;
+    }
+
+    .logos {
+        width: 25vw;
+    }
+
+    #html, #github, #css {
+        width: 20vw;
+        position: static;
+        margin: 1rem 0;
+    }
+
+    .info {
+        font-size: 0.7rem;
+        bottom: 3rem;
+        margin: 1rem 4rem;
+    }
+
+    .text {
+        font-size: 3rem;
+        padding-bottom: 20vh;
+    }
+
+    .yt {
+        font-size: 4rem;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .cont3 {
+        padding: 0 1rem;
+    }
+
+    .videos {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 2fr);
+        max-inline-size: 100vw;
+    }
+
+    .smallc {
+        max-inline-size: 90vw;
+        margin: 1rem 0;
+    }
+
+    .time {
+        font-size: 1rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .desc {
+        font-size: 0.7rem;
+    }
+
+    .button2 {
+        padding-bottom: 4rem;
+    }
+
+    .us {
+        font-size: 8vh;
+        padding: 2rem;
+    }
+
+    .aboutus {
+        grid-template-columns:  1fr;
+        grid-column: span 1;
+        margin-bottom: 8vh;
+    }
+
+    .person {
+        max-inline-size: 45vw;
+        padding-bottom: 1rem;
+    }
+
+    .name {
+        font-size: 3rem;
+    }
+    .profile{
+        height: 10dvh;
+    }
+
+    .role {
+        font-size: 1.2rem;
+    }
+
+    .details {
+        font-size: 0.6rem;
+    }
+
+    .layer1 {
+        flex-direction: column;
+        padding: 5vh 2vh;
+    }
+
+    .head {
+        font-size: 2rem;
+    }
+
+    .links {
+        font-size: 0.7rem;
+        line-height: 1.4rem;
+    }
+
+    .slide-right {
+        animation: slide-right ease-in-out 1s 1 forwards;
+    }
+
+    .animation4 {
+        animation: pop-up ease-in-out 1s 1;
+        animation-timeline: view();
+        animation-range: entry 0% cover 20%;
+    }
+}
+
+button {
+    padding: 0.5rem 1rem;
 }
