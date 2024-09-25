@@ -402,7 +402,7 @@ a{
 /* No changes needed as the default styles are already optimized for large screens */
 
 /* Desktops and Laptops (min-width: 992px and max-width: 1199px) */
-@media (max-width: 1440px) and (min-width: 1024px) {
+@media (max-width: 1440px) and (min-width: 1025px) {
 
     .logo-float {
         font-size: 19rem;
@@ -438,7 +438,7 @@ a{
 }
 
 /* Tablets (min-width: 768px and max-width: 991px) */
-@media (max-width: 1023px) and (min-width: 800px) {
+@media (max-width: 1024px) and (min-width: 800px) {
     .container1 {
         align-items: center;
         padding: 0 2rem;
