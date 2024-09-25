@@ -59,7 +59,10 @@ signInBtn.addEventListener('click', () => {
         .then((userCredential) => {
             console.log("loggedin");
             const user = userCredential.user;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             window.location.href = "../index.html";
             console.log('User signed in:', user);
         })
@@ -76,7 +79,11 @@ googleBtn.addEventListener('click', () => {
     signInWithPopup(auth, provider)
         .then((result) => {
             console.log('Google sign-in:', result.user);
+<<<<<<< Updated upstream
             window.location.href="../index.html";
+=======
+            window.location.href = '../index.html'
+>>>>>>> Stashed changes
         })
         .catch((error) => {
             console.error('Error signing in with Google:', error.message);
