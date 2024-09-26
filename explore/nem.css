@@ -87,8 +87,8 @@ header {
 }
 
 /* Button Styling */
-button{
-    background-color: #9082f7;
+.wrap{
+    color: #9082f7;
     border: none;
     border-radius: 8px;
     height: 7vh;
@@ -99,8 +99,13 @@ button{
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+.other{
+    color: #9082f7;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
 
-button:hover{
+.other:hover{
     background-color: aliceblue;
     color: #000;
 }
@@ -137,11 +142,11 @@ button:hover{
 .images {
     background-color: transparent;
 }
-
 .fr{
     height: 100%;
     background-color: transparent;
 }
+
 
 #h1{
     grid-area: 1 / 7 / 4 / 8;
@@ -178,8 +183,8 @@ button:hover{
         transform: translateY(-10px);
     }   
     50%{
-        transform: translateY(-40px);
-    }
+        transform: translateY(-50px);
+    } 
     100%{
         transform: translateY(-10px); 
     }
@@ -675,11 +680,12 @@ font-family: "Martian Mono",monospace;
     /* Video Section */
     .videos {
         grid-template-columns: 1fr; /* Single column layout */
+        grid-column: span 2;
     }
 
-    .smallc {
-        grid-column: span 1;
-    }
+   /*  .smallc {
+        grid-column: span 2;
+    } */
 
     .thumb {
         border-radius: 5px; /* Smaller radius for smaller screens */
