@@ -421,6 +421,8 @@ a{
     }
 
     .info {
+        position: relative;
+        top: -6.5rem;
         font-size: 1rem;
         bottom: 3rem;
     }
@@ -435,7 +437,7 @@ a{
     #vid{
         max-inline-size: 98dvw;
         width: 98dvw;
-        max-height:59.5dvh;
+        max-height:57dvh;
     }
     .white{
         height: 60dvh;
