@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Q&A Forum</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chat.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
+
 <body>
   <header>
     <div class="container1">
-        <div class="logo">
-            <span>CY24</span>
+      <div class="logo">
+        <span>CY24</span>
+      </div>
+      <div class="wrap">
+        <div class="all">
+          <a id="home" href="index.html">Home</a>
         </div>
-        <div class="wrap">
-            <div class="all">
-                <a id="home" href="index.html">Home</a>
-            </div>
-            <div class="lines">
-                <a href="profile.html">
-                    <svg viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
-                            stroke="#CCCCCC" stroke-width="0.144" />
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.1"
-                                d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
-                                fill="#32323" />
-                            <path
-                                d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
-                                stroke="#32323" stroke-width="2.4" />
-                            <path d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"
-                                stroke="#32323" stroke-width="2.4" stroke-linecap="round" />
-                        </g>
-                    </svg>
-                </a>
-            </div>
+        <div class="lines">
+          <a href="profile.html">
+            <svg viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+              <g id="SVGRepo_bgCarrier" stroke-width="0" />
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+                stroke-width="0.144" />
+              <g id="SVGRepo_iconCarrier">
+                <path opacity="0.1"
+                  d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
+                  fill="#32323" />
+                <path
+                  d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
+                  stroke="#32323" stroke-width="2.4" />
+                <path d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21" stroke="#32323"
+                  stroke-width="2.4" stroke-linecap="round" />
+              </g>
+            </svg>
+          </a>
         </div>
+      </div>
     </div>
-</header>
+    <div class="container-2">
+      <div class="heading">
+        <h1 id="resources-heading">Ask Anything!</h1>
+      </div>
+    </div>
+  </header>
   <div class="container">
     <!-- Post a Question Section -->
     <div class="post-question">
-      <textarea id="question-input" class="question-input" placeholder="What is your question?"></textarea>
+      <textarea id="question-input" class="question-input" placeholder="Ask your question."></textarea>
       <button id="post-question-button" class="btn-post">
-        <i class="fas fa-question-circle"></i> Ask Question
+        <img src="/chat/assets/question-and-answer-svgrepo-com.svg" id="ques-mark" alt=""> Ask Question
       </button>
     </div>
 
@@ -57,6 +64,50 @@
 
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-  <script src="script.js"></script>
+  <script src="chat.js"></script>
+  <footer>
+    <div class="layer1">
+      <div class="element1">
+        <div class="head">
+          <p>Socials</p>
+        </div>
+        <div class="links">
+          <a href="https://www.instagram.com/codify24?utm_source=qr&igsh=MWt3c3Rjb2Y2bDdtcw==">Instagram</a>
+          <a href="https://x.com/codify1309">Twitter</a>
+          <a href="">Facebook</a>
+        </div>
+      </div>
+      <div class="element2">
+        <div class="head">
+          <p>Contact Info</p>
+        </div>
+        <div class="links">
+          <a href="">+91 1234567890</a>
+          <a href="mailto:codify1309@gmail.com">codify1309@gmail.com</a>
+        </div>
+      </div>
+      <div class="element3">
+        <div class="head">
+          <p>Platforms</p>
+        </div>
+        <div class="links">
+          <a href="">Spotify</a>
+          <a href="">Apple Podcast</a>
+          <a href="">Deezer</a>
+          <a href="">Majelan</a>
+        </div>
+      </div>
+      <div class="element4">
+        <div class="head">
+          <p>Resources</p>
+        </div>
+        <div class="links">
+          <a href="">Images</a>
+          <a href="">Fonts</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     background-color: #000;
-    color: aliceblue;
+    color: white;
   }
   
   .navbar {
@@ -49,11 +49,30 @@ svg{
   height: 6.6dvh;
   cursor: pointer;
 }
+
+.heading{
+  display: flex;
+  max-width: 100vw;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+#resources-heading{
+  color: #fff;
+  font-family: "newtitle";
+  font-size: 15rem;
+  font-weight: 500;   
+}
+
 body{
   font-family: "Martian Mono",monospace;
 }
 .all #home{
   text-decoration: none;
+  font-size: 1.5rem;
   font-family: "Martian Mono",monospace;
   color: #9082f7;
   cursor: pointer;
@@ -66,10 +85,7 @@ body{
   justify-content: space-between;
 }
   
-  h1 {
-    margin: 0;
-    font-size: 24px;
-  }
+
   
   /* Main Container */
   .container {
@@ -86,6 +102,10 @@ body{
     margin-bottom: 20px;
     border-left: 5px solid #9082f7;
   }
+  #ques-mark{
+    height: 2rem;
+    background-color: transparent;
+  }
   
   .question-input {
     background-color: #464647;
@@ -94,12 +114,14 @@ body{
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
+    font-family: "Martian Mono",monospace;
     margin-bottom: 10px;
   }
   
   .btn-post {
+    font-family: "Martian mono",monospace;
     background-color: #9082f7;
-    color: #fff;
+    color: black;
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
@@ -125,9 +147,11 @@ body{
     margin-bottom: 20px;
   }
   h5{
-    font-size: 2rem;
+    font-size: 3rem;
     border-radius: 4px;
-    padding: 0 1rem;
+    letter-spacing: 0.5px;
+    padding: 0rem;
+    font-family: "newtitle";
   }
   .question-header {
     font-weight: bold;
@@ -144,6 +168,11 @@ body{
   .replies-container{
     border-radius: 8px;
   }
+
+  #reply-mark{
+    height: 2rem;
+    background-color: transparent;
+  }
   
   .reply-input {
     width: 100%;
@@ -152,18 +181,20 @@ body{
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
+    font-family: "Martian Mono",monospace;
   }
   
   .btn-reply {
     background-color: #9082f7;
     color: #000;
-    padding: 5px 10px;
+    padding: 1rem 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 1rem;
     margin-top: 10px;
     font-family: "Martian Mono",monospace;
+    gap: 10px;
   }
   
   .btn-reply:hover {
@@ -184,12 +215,16 @@ body{
   }
   .submit-reply-button {
     background-color: #28a745;
-    color: #464647;
-    font-weight: bold;
+    color: #000;
+    font-family: "Martian Mono",monospace;
     padding: 12px 20px;
     margin-top: 10px;
     border-radius: 6px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#sent-mark{
+  background-color: transparent;
+  height: 2rem;
 }
 
 .submit-reply-button:hover {
@@ -208,4 +243,36 @@ body{
 
 .btn-post i, .btn-reply i, .submit-reply-button i {
     margin-right: 5px; /* Space between icon and text */
+}
+
+
+.layer1{
+  display: flex;
+  color: aliceblue;
+  justify-content: space-around;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-radius: 2px;
+  padding: 15vh 5vh;
+  margin: 10vh;
+}
+
+.head{
+  font-family: "newtitle";
+  font-size: 4rem;
+  color: #9082f7;
+}
+
+.links{
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  font-size: 1rem;
+  font-family: "Martian Mono", monospace;
+  line-height: 2rem;
+}
+
+a{
+  color: aliceblue;
+  text-decoration: none;
 }
