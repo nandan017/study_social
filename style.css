@@ -53,6 +53,13 @@
     column-gap: 1rem;
     cursor: pointer; 
 }
+
+.live{
+    height: 6dvh;
+}
+.cicon{
+    height: 6dvh;
+}
 .other{
     color: #9082f7;
     text-decoration: none;
