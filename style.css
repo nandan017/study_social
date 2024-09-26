@@ -114,7 +114,6 @@ button:hover{
     width: 12vw;
     top: 30px;
     z-index: 2;
-    background-color: transparent;
 }
 
 #github{
@@ -123,7 +122,6 @@ button:hover{
     left: 3.5rem;
     bottom: 12rem;
     z-index: 2;
-    background-color: transparent;
 }
 
 #css{
@@ -131,8 +129,7 @@ button:hover{
     max-inline-size: 20vw;
     grid-area: 3/3/4/4;
     left: 120px;
-    z-index: 2;
-    background-color: transparent;  
+    z-index: 2;  
     max-inline-size: 100%;
     width: 15vw;
 }
@@ -412,7 +409,7 @@ a{
 /* No changes needed as the default styles are already optimized for large screens */
 
 /* Desktops and Laptops (min-width: 992px and max-width: 1199px) */
-@media (max-width: 1440px) and (min-width: 1025px) {
+@media (max-width: 2560px) and (min-width: 1025px) {
 
     .logo-float {
         font-size: 19rem;
