@@ -15,7 +15,7 @@
 }
 
 body {
-    background-color: #121212; /* Dark background for contrast */
+    background-color:#000; /* Dark background for contrast */
     color: #ffffff; /* Default text color */
     
 }
@@ -37,7 +37,6 @@ body {
 header {
     background-color: #1e1e1e;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    position: sticky;
     top: 0;
     z-index: 1000;
     font-family: "newtitle";
@@ -48,6 +47,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
+    background: #000;
 }
 
 .logo {
@@ -55,6 +55,7 @@ header {
     color: #fff;
     font-size: 40px;
     font-weight: 300;
+    background-color: #000;
 }
 
 .navbar {
@@ -86,8 +87,8 @@ header {
 }
 
 /* Button Styling */
-button{
-    background-color: #9082f7;
+.wrap{
+    color: #9082f7;
     border: none;
     border-radius: 8px;
     height: 7vh;
@@ -98,8 +99,13 @@ button{
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+.other{
+    color: #9082f7;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
 
-button:hover{
+.other:hover{
     background-color: aliceblue;
     color: #000;
 }
@@ -119,6 +125,7 @@ button:hover{
     padding-bottom: 25vh;
     position: relative;
     padding: 2rem;
+    background-color: #000;
     font-weight: 500px;
 }
 
@@ -135,11 +142,11 @@ button:hover{
 .images {
     background-color: transparent;
 }
-
 .fr{
     height: 100%;
     background-color: transparent;
 }
+
 
 #h1{
     grid-area: 1 / 7 / 4 / 8;
@@ -176,8 +183,8 @@ button:hover{
         transform: translateY(-10px);
     }   
     50%{
-        transform: translateY(-40px);
-    }
+        transform: translateY(-50px);
+    } 
     100%{
         transform: translateY(-10px); 
     }
@@ -276,7 +283,7 @@ button:hover{
 .thumb{
     width: 100%;
     border-radius: 10px;
-    border: 1px solid grey;
+    border: 1px solid #000;
     object-fit: cover;
 }
 .time{
@@ -311,7 +318,7 @@ button:hover{
 .blg{
     display:grid;
     grid-column: span 2;
-    color: #9082f7;
+    color: gold;
     font-size: 4rem;
     font-family: "Oswald", sans-serif;
     padding-left: 4rem; 
@@ -554,7 +561,155 @@ a{
     }
 }
 
+
 .footer-bottom{
 text-align: center;
 font-family: "Martian Mono",monospace;
+}
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+    /* Header */
+    .container1 {
+        padding: 1rem 2rem;
+    }
+
+    .logo {
+        font-size: 30px; /* Adjust logo size */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #1e1e1e;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        width: 150px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .container2 {
+        grid-template-columns: repeat(4, 1fr); /* Adjust grid */
+        grid-template-rows: repeat(13, 8vh);
+    }
+
+    #name {
+        font-size: 20rem; /* Adjust large font */
+    }
+
+    /* Video Section */
+    .videos {
+        grid-template-columns: repeat(2, 1fr); /* Adjust columns */
+        gap: 1rem;
+    }
+
+    .smallc {
+        grid-column: span 1; /* Ensure cards fit the grid */
+    }
+
+    /* Footer */
+    .layer1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .head {
+        font-size: 2rem; /* Adjust text size in the footer */
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    /* Header */
+    .container1 {
+        padding: 1rem; /* Reduce padding */
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        padding: 0.5rem;
+        width: 120px;
+    }
+
+    /* Button */
+    button {
+        width: 60vw; /* Full-width buttons for mobile */
+        height: 5vh;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .container2 {
+        grid-template-columns: repeat(2, 1fr); /* 2-column grid */
+        grid-template-rows: repeat(13, 8vh);
+    }
+
+    #name {
+        font-size: 10rem; /* Smaller for mobile */
+    }
+
+    .info {
+        font-size: 1rem; /* Adjust text size */
+    }
+
+    .text {
+        font-size: 3rem;
+    }
+
+    /* Video Section */
+    .videos {
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-column: span 2;
+    }
+
+   /*  .smallc {
+        grid-column: span 2;
+    } */
+
+    .thumb {
+        border-radius: 5px; /* Smaller radius for smaller screens */
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .desc {
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .layer1 {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .head {
+        font-size: 1.5rem;
+    }
+
+    .links {
+        font-size: 0.8rem;
+    }
 }
