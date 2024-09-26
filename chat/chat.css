@@ -1,9 +1,15 @@
 /* General Page Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f6f7f9;
+
+@font-face {
+  font-family: "newtitle";
+  src: url(/fonts/NewTitle_Complete/Fonts/OTF/NewTitle-Regular.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');
+*{
     margin: 0;
     padding: 0;
+    background-color: #000;
+    color: aliceblue;
   }
   
   .navbar {
@@ -12,6 +18,53 @@ body {
     padding: 10px;
     text-align: center;
   }
+  ::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #9082f7;
+    border-radius: 10px;
+}
+
+.logo {
+  font-family: "newtitle";
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.container1{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    font-size: 30px;
+    padding-top: 1rem;
+}
+svg{
+  width: 6.6dvw;
+  height: 6.6dvh;
+  cursor: pointer;
+}
+body{
+  font-family: "Martian Mono",monospace;
+}
+.all #home{
+  text-decoration: none;
+  font-family: "Martian Mono",monospace;
+  color: #9082f7;
+  cursor: pointer;
+}
+.wrap{
+  display: flex;
+  min-width: 240px;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
   
   h1 {
     margin: 0;
@@ -26,14 +79,16 @@ body {
   
   /* Post a Question Section */
   .post-question {
-    background-color: white;
+    background-color: #000;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    border-left: 5px solid #9082f7;
   }
   
   .question-input {
+    background-color: #464647;
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -43,8 +98,8 @@ body {
   }
   
   .btn-post {
-    background-color: #0079d3;
-    color: white;
+    background-color: #9082f7;
+    color: #fff;
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
@@ -54,7 +109,7 @@ body {
   }
   
   .btn-post:hover {
-    background-color: #0062a3;
+    background-color: bisque;
   }
   
   /* Questions and Replies Section */
@@ -63,24 +118,31 @@ body {
   }
   
   .question-card {
-    background-color: white;
+    background-color:  #000;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
   }
-  
+  h5{
+    font-size: 2rem;
+    border-radius: 4px;
+    padding: 0 1rem;
+  }
   .question-header {
     font-weight: bold;
     margin-bottom: 10px;
   }
   
   .reply {
-    background-color: #f1f3f5;
+    background-color: #464647;
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
     margin-left: 20px;
+  }
+  .replies-container{
+    border-radius: 8px;
   }
   
   .reply-input {
@@ -93,23 +155,24 @@ body {
   }
   
   .btn-reply {
-    background-color: #0079d3;
-    color: white;
+    background-color: #9082f7;
+    color: #000;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 13px;
     margin-top: 10px;
+    font-family: "Martian Mono",monospace;
   }
   
   .btn-reply:hover {
-    background-color: #0062a3;
+    background-color: bisque;
   }
   
   /* Subtle Borders */
   .question-card, .reply {
-    border-left: 4px solid #0079d3;
+    border-left: 4px solid #9082f7;
   }
   
   .reply-area {
@@ -121,7 +184,7 @@ body {
   }
   .submit-reply-button {
     background-color: #28a745;
-    color: white;
+    color: #464647;
     font-weight: bold;
     padding: 12px 20px;
     margin-top: 10px;

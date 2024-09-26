@@ -75,10 +75,6 @@ button:hover {
 
 
 }
-#left{
-   
-    
-}
 
 
 #left h3 {
@@ -121,25 +117,28 @@ button:hover {
     line-height: 15vh;
     font-family: "newtitle";
     font-size: 5rem;
-    
-
-
 }
-
-
+.all{
+    font-family: "Martian Mono",monospace;
+    color: #9082f7;
+    font-size: 1.5rem;
+}
+a{
+    text-decoration: none;
+}
+#sm{
+    color: #9082f7;
+}
 #right h2 {
     line-height: 10vh;
     font-family: "Martian Mono",monospace;
     color:rgb(248, 216, 177);
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 #right p{
     color:white;
     font-family: "Martian Mono",monospace;
 }
-
-
-
 
 .pd-right button img {
     height: 15px;
@@ -160,6 +159,7 @@ button:hover {
     border-radius: 2px;
     padding: 15vh 5vh;
     margin: 10vh;
+    margin-bottom: 2rem;
 }
 
 .head{
@@ -180,12 +180,6 @@ button:hover {
 a{
     color: aliceblue;
     text-decoration: none;
-}
-
-
-body {
-    padding-bottom: 15rem;
-
 }
 
 ::-webkit-scrollbar {
@@ -238,7 +232,6 @@ body {
 
 
 }
-
 .q {
     align-items: center;
     padding-right: 170px;
