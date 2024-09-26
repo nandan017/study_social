@@ -39,13 +39,13 @@ function displayQuestion(questionId, questionData) {
     questionCard.innerHTML = `
         <h5>${questionData.text}</h5>
         <button class="btn-reply" data-question-id="${questionId}">
-          <i class="fas fa-reply"></i> Reply (${repliesCount})
+          <img src="/chat/assets/reply-all-svgrepo-com.svg" id="reply-mark" alt=""> Reply (${repliesCount})
         </button>
         <div class="replies-container">${repliesHTML}</div>
         <div class="reply-area mt-2">
             <textarea class="reply-input" placeholder="Write your reply..."></textarea>
             <button class="submit-reply-button" data-question-id="${questionId}">
-              <i class="fas fa-paper-plane"></i> Submit Reply
+              <img src="/chat/assets/sent-svgrepo-com.svg" id="sent-mark" alt=""> Submit Reply
             </button>
         </div>
     `;
