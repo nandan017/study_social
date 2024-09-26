@@ -1,0 +1,148 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f7f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #1a1a1b;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  /* Main Container */
+  .container {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  /* Post a Question Section */
+  .post-question {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .question-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .btn-post {
+    background-color: #0079d3;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+  }
+  
+  .btn-post:hover {
+    background-color: #0062a3;
+  }
+  
+  /* Questions and Replies Section */
+  .questions-container {
+    margin-top: 20px;
+  }
+  
+  .question-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .question-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .reply {
+    background-color: #f1f3f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  .reply-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .btn-reply {
+    background-color: #0079d3;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  
+  .btn-reply:hover {
+    background-color: #0062a3;
+  }
+  
+  /* Subtle Borders */
+  .question-card, .reply {
+    border-left: 4px solid #0079d3;
+  }
+  
+  .reply-area {
+    display: none;
+  }
+  
+  .show-reply-area {
+    display: block;
+  }
+  .submit-reply-button {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-reply-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Gives a subtle lift effect */
+}
+
+.submit-reply-button:active {
+    background-color: #1e7e34;
+    transform: translateY(0); /* Resets lift on click */
+}
+.btn-post, .btn-reply, .submit-reply-button {
+    display: flex;
+    align-items: center;
+}
+
+.btn-post i, .btn-reply i, .submit-reply-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
