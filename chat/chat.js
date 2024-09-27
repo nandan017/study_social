@@ -1,19 +1,28 @@
 // Replace with your Firebase project configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBfQi6a1MtBtUjqqi2YyqkLFg1wDP1Q9dc",
-    authDomain: "fir-334d1.firebaseapp.com",
-    databaseURL: "https://fir-334d1-default-rtdb.firebaseio.com",
-    projectId: "fir-334d1",
-    storageBucket: "fir-334d1.appspot.com",
-    messagingSenderId: "219054024057",
-    appId: "1:219054024057:web:350b5f9eebc30544463ba8",
-    measurementId: "G-D40VG3NT3Q"
+    apiKey: "AIzaSyCEzKxTwb0t-J6H_bwoto8z3PFJwhd6EBs",
+    authDomain: "codify24-52659.firebaseapp.com",
+    databaseURL: "https://codify24-52659-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "codify24-52659",
+    storageBucket: "codify24-52659.appspot.com",
+    messagingSenderId: "442850822241",
+    appId: "1:442850822241:web:4ec1f569fe87aec24b4220",
+    measurementId: "G-X5Z5TMR7BH"
 };
 
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 const questionsRef = database.ref('questions');
+const auth = firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        const email = user.email;
+        console.log('Logged in user email:', email);
+    } else {
+        console.log('No user is signed in');
+    }
+});
+
 
 // Get DOM elements
 const questionsContainer = document.getElementById('questions-container');
@@ -98,4 +107,28 @@ questionsContainer.addEventListener('click', (e) => {
         }
     }
 });
+
+
+
+// Get the currently logged-in user
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        // User is signed in, retrieve their email
+        const email = user.email;
+        console.log('Logged in user email:', email);
+
+        // Now you can use the email in your code, for example:
+        displayUserEmail(email);
+    } else {
+        // No user is signed in
+        console.log('No user is signed in');
+    }
+});
+
+// Function to display the user's email (you can customize this)
+function displayUserEmail(email) {
+    const emailContainer = document.getElementById('email-container');
+    emailContainer.textContent = `Logged in as: ${email}`;
+}
+
 
