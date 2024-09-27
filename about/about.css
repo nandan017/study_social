@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');
+@font-face {
+    font-family: "newtitle";
+    src: url(/fonts/NewTitle_Complete/Fonts/OTF/NewTitle-Regular.otf);
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #9082f7;
+    border-radius: 10px;
+}
+
+
+.heading{
+    color: #fff;
+}
+
+.main-cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: span 2;
+}
+.about{
+    color: #fff;
+}
+
+#bg-video{
+    height: 50dvh;
+    width: 50dvh;
+}
