@@ -122,6 +122,39 @@ button:hover{
     font-weight: 200;
 }
 
+.container-3{
+    margin: 5vh;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #fff;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+#more{
+    color: #fff;
+    font-family: "newtitle";
+    font-size: 5rem;
+}
+
+#more-in{
+    color: #fff;
+    font-family: "Martian Mono",monospace;
+    color: #9082f7;
+    line-height: 1.3rem;
+}
+.drive-button{
+    padding: 2rem ;
+}
+#drive-logo{
+    height: 2rem;
+    background-color: transparent;
+}
+button #drive-logo{
+    align-items: center;
+    text-align: center;
+}
+
 
 .layer1{
     display: flex;
