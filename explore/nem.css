@@ -16,7 +16,7 @@
 
 body {
     background-color:#000; /* Dark background for contrast */
-    color: #ffffff; /* Default text color */
+    color: #ffffff; 
     
 }
 
@@ -86,37 +86,22 @@ header {
     cursor: pointer;
 }
 
-/* Button Styling */
+/*home styling*/
 .wrap{
-    color: #9082f7;
-    border: none;
-    border-radius: 8px;
-    height: 7vh;
-    width: 12vw;
-    font-family: "Martian Mono", monospace;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    min-width: 240px;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
 }
-.other{
-    color: #9082f7;
+.new #home{
     text-decoration: none;
-    font-size: 1.5rem;
-}
-
-.other:hover{
-    background-color: aliceblue;
-    color: #000;
+    font-family: "Martian Mono",monospace;
+    color: #9082f7;
+    cursor: pointer;
 }
 
 /* Hero Section */
-.hero {
-    padding: 5rem 2rem;
-    background-color: #1e1e1e;
-    text-align: center;
-}
-
 .container2 {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -254,14 +239,15 @@ header {
 
 .cont3 {
     margin-top: 1.5rem;
-   
 }
 
 .videos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3,minmax(10vw,auto));
     gap: 2rem;
-   
+    grid-column: span 2;
+   max-inline-size: 90vw;
 }
 
 .smallc{
@@ -278,6 +264,7 @@ header {
 .smallc:hover{
     transform: translateY(-5px);
     box-shadow: 0 4px 16px rgba(0,0,0,0.7);
+    
 }
 
 .thumb{
@@ -308,12 +295,6 @@ header {
 }
 
 
-
-.button2 button:hover{
-    background-color: aliceblue;
-    color: #000;
-}
-
 /*blogs*/
 .blg{
     display:grid;
@@ -341,8 +322,16 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-   
 }
+@keyframes pop-up {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1; }
+}   
 
 .smallc{
     position: relative;
@@ -353,6 +342,11 @@ header {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     grid-column: span 2;
+    animation: pop-up ease-in-out 1s 1;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+    max-inline-size: 79vw;
+
 }
 
 .smallc:hover{
@@ -360,6 +354,17 @@ header {
     box-shadow: 0 4px 16px rgba(0,0,0,0.7);
 }
 
+
+@keyframes pop-up {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 .thumb{
     width: 100%;
     border-radius: 10px;
@@ -385,13 +390,6 @@ header {
     font-family: "Martian Mono", monospace;
     font-size: 1rem;
     color: #ccc;
-}
-
-
-
-.button2 button:hover{
-    background-color: aliceblue;
-    color: #000;
 }
 
 .bl{
@@ -647,12 +645,6 @@ font-family: "Martian Mono",monospace;
     .nav-links {
         padding: 0.5rem;
         width: 120px;
-    }
-
-    /* Button */
-    button {
-        width: 60vw; /* Full-width buttons for mobile */
-        height: 5vh;
     }
 
     /* Hero Section */
