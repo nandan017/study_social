@@ -55,19 +55,6 @@ svg{
     justify-content: space-between;
 }
 
-button{
-    background-color: #9082f7;
-    border-radius: 8px;
-    height: 7dvh;
-    width: 12dvw;
-    font-family: "Martian Mono", monospace;
-    font-size: medium;
-}
-
-button:hover{
-    cursor: pointer;
-    background-color: aliceblue;
-}
 
 .heading{
     display: flex;
