@@ -62,10 +62,11 @@
   
 
 .heading{
-    color: #fff;
+    color: #9082f7;
     font-family: "newtitle";
-    font-size: 6.5rem;
+    font-size: 8rem;
     font-weight: 500;
+    padding: 2rem 0;
 }
 
 .cont-2{
@@ -85,9 +86,10 @@
     text-align: center;
 }
 .about{
-    color: #9082f7;
+    color: aliceblue;
     font-family: "Martian Mono",monospace;
     font-size: 1.2rem;
+    padding-bottom: 4rem;
 }
 
 #bg-video{
@@ -97,4 +99,7 @@
 .vid-cont{
     display: grid;
     grid-template-columns: 1fr;
+}
+a{
+    text-decoration: none;
 }
