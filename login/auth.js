@@ -1,6 +1,6 @@
 // Import Firebase functions and initialize
-import { initializeApp} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider,signInWithPopup } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -25,13 +25,13 @@ if (signUpBtn) {
         const email = document.getElementById('email-input').value;
         const password = document.getElementById('password-input').value;
         console.log(name, email, password);
-        
+
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 window.location.href = '../index.html'
                 // Optionally update profile with name
-                updateProfile(user,{ displayName: name })
+                updateProfile(user, { displayName: name })
                     .then(() => {
                         console.log('User profile updated:', user);
                     })
@@ -51,10 +51,10 @@ const signInBtn = document.getElementById('sign-in');
 signInBtn.addEventListener('click', () => {
     console.log("clicked");
     console.log("clicked");
-    
+
     const email = document.querySelector('.input[type="text"]').value;
     const password = document.querySelector('.input[type="password"]').value;
-    
+
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log("loggedin");
@@ -83,11 +83,33 @@ googleBtn.addEventListener('click', () => {
 });
 
 // toggle password
-document.getElementById('togglebtn').addEventListener("click",function(){
+document.getElementById('togglebtn').addEventListener("click", function () {
     var x = document.getElementById("myInput");
     if (x.type === "password") {
-      x.type = "text";
+        x.type = "text";
     } else {
-      x.type = "password";
+        x.type = "password";
     }
 });
+
+// forgot password
+const forgotPasswordForm = document.querySelector('.form-3');
+forgotPasswordForm.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    const email = document.getElementById('email-3').value;
+    
+    if(email){
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                alert("A password reset link has been sent to your email!");
+            })
+            .catch((error) => {
+                console.log("Error code:",error.code);
+                console.log("Error message:",error.message);
+                alert("Error:"+error.message)
+            })
+    }
+    else{
+        alert("Please enter a valid email address.")
+    }
+})
