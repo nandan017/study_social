@@ -16,15 +16,20 @@
             <div class="wrap">
                 <div class="all">
                     <a href="index.html">
-                    <span id="sm">Home</span>
+                        <span id="sm">Home</span>
                     </a>
                 </div>
                 <div class="all">
                     <a href="resource.html">
-                    <span id="sm">Resources</span>
+                        <span id="sm">Resources</span>
                     </a>
                 </div>
-         
+                <a href="#pop-overlay" target="_self">
+                    <div class="edit">
+                        <img id="edit-icon" src="/assets/edit-svgrepo-com.svg" alt="">
+                    </div>
+                </a>
+
             </div>
         </div>
     </header>
@@ -62,6 +67,27 @@
             <p>&ltplace your links here&gt</p>
         </div>
 
+    </div>
+    <div id="pop-overlay" class="overlay">
+        <div class="popup">
+            <div class="form4-box">
+                <form class="form-4">
+                    <span class="title">Edit Profile</span>
+                    <span class="subtitle">Let your Codify profile be as good as you!</span>
+                    <div class="form4-container">
+                        <input type="text" class="input-4" placeholder="Enter your name" required="">
+                        <input type="number" class="input-4" placeholder="Age" required="">
+                        <input type="text" class="input-4" placeholder="Location">
+                        <input type="text" class="input-4" placeholder="About/Bio" required="">
+                        <input type="text" class="input-4" placeholder="Place your social links...">
+                    </div>
+                    <input type="button" class="submit" value="Submit">
+                    <a href="login/login.html">
+                        <input id="logout" type="button" class="submit" value="Logout">
+                    </a>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 <footer>
@@ -105,7 +131,6 @@
             </div>
         </div>
     </div>
-        
 </footer>
 
 
