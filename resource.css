@@ -55,7 +55,6 @@ svg{
     justify-content: space-between;
 }
 
-
 .heading{
     display: flex;
     max-width: 100vw;
@@ -108,6 +107,19 @@ svg{
     font-size: 1rem;
     font-weight: 200;
 }
+button{
+        color: #000;
+        font-family: "Martian Mono", monospace;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: #9082f7;
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 5px; 
+        cursor: pointer;
+    
+}
+
 
 .container-3{
     margin: 5vh;

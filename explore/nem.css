@@ -19,7 +19,6 @@ body {
     color: #ffffff; 
     
 }
-
 ::-webkit-scrollbar{
     width: 5px;
 }
@@ -98,6 +97,12 @@ header {
     text-decoration: none;
     font-family: "Martian Mono",monospace;
     color: #9082f7;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+svg{
+    width: 6.6dvw;
+    height: 6.6dvh;
     cursor: pointer;
 }
 
@@ -330,7 +335,8 @@ header {
     }
     to {
         transform: scale(1);
-        opacity: 1; }
+        opacity:1;
+    }
 }   
 
 .smallc{
@@ -476,7 +482,7 @@ header {
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
     border-radius: 2px;
-    padding: 15vh 5vh;
+    padding: 10vh 5vh;
     margin: 10vh;
 }
 
