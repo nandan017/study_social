@@ -48,6 +48,10 @@
     justify-content: space-between;
 }
 
+#edit-icon{
+    height: 2.1rem;
+}
+
 button {
     background-color: #9082f7;
     border-radius: 8px;
@@ -236,3 +240,102 @@ a{
     align-items: center;
     padding-right: 170px;
 }
+
+.overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target{
+    visibility: visible;
+    opacity: 1;
+  }
+  .popup{
+    position: relative;
+  }
+
+.form4-box {
+  max-width: 40rem;
+  background: darkgrey;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #010101;
+}
+
+.form-4 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  padding: 32px 40px 35px;
+  gap: 16px;
+  text-align: center;
+  font-family: "Martian Mono",monospace;
+  background-color: beige;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2.4rem;
+  font-family: "newtitle";
+  letter-spacing: 1px;
+  color: #666;
+  background-color: transparent;
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: #666;
+  font-family: "newtitle";
+  letter-spacing: 0.5px;
+  background-color: transparent;
+}
+
+.form4-container {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: lightgrey;
+  margin: 1rem 0 .5rem;
+  width: 100%;
+}
+
+.input-4 {
+  background: none;
+  border: 0;
+  outline: 0;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: .9rem;
+  padding: 8px 15px;
+  font-family: "Martian mono",monospace;
+}
+
+
+.form-4 .submit {
+  background-color: gray;
+  color: #fff;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 100;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.form-4 .submit:hover {
+  background-color: #6556d9;
+}
+.form-4 #logout:hover {
+    background-color: #d10000;
+  }
