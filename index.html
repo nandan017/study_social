@@ -1,416 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Codify.com</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="icon" href="/assets/cy24.png">
-  </head>
-  <body>
-    <header>
-      <div class="container1">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codify.com</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="/assets/cy24.png">
+</head>
+
+<body>
+  <header>
+    <div class="container1">
+      <a href="about/about.html">
         <div class="logo">
-          <span>CY24</span>
+          <span id="cy24">CY24</span>
         </div>
-        <div class="wrap">
-          <a href="/explore/nem.html" class="other">
+      </a>
+      <div class="wrap">
+        <a href="/explore/nem.html" class="other">
           <div class="all">
             <span>Explore</span>
           </div>
-          </a>
-          <a href="resource.html" class="other">
+        </a>
+        <a href="resource.html" class="other">
           <div class="all">
             <span>Resources</span>
           </div>
-          </a>
-          <a href="">
+        </a>
+        <a href="">
           <div class="live">
             <a href="/chat/chat.html">
-            <img src="/assets/chat.svg" alt="live chat icon" class="cicon">
+              <img src="/assets/chat.svg" alt="live chat icon" class="cicon">
             </a>
           </div>
-          </a>
-          <a href="profile.html">
+        </a>
+        <a href="profile.html">
           <div class="lines">
-            <svg
-              class="p"
-              width="800px"
-              height="800px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#ffffff"
-            >
+            <svg class="p" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
               <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
 
               <g id="SVGRepo_iconCarrier">
-                <path
-                  opacity="0.1"
+                <path opacity="0.1"
                   d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
-                  fill="#ffffff"
-                />
+                  fill="#ffffff" />
                 <path
                   d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
-                  stroke="#ffffff"
-                  stroke-width="2"
-                />
-                <path
-                  d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"
-                  stroke="#ffffff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
+                  stroke="#ffffff" stroke-width="2" />
+                <path d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21" stroke="#ffffff"
+                  stroke-width="2" stroke-linecap="round" />
               </g>
             </svg>
           </div>
-          </a>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="wrapper">
+      <div class="logo-float">
+        <div class="purple">
+          <video id="vid" src="/assets/bg.mp4" autoplay muted loop></video>
+        </div>
+        <div class="white">
+          <p class="nm">Codify</p>
         </div>
       </div>
-    </header>
-    <main>
-      <div class="wrapper">
-        <div class="logo-float">
-          <div class="purple">
-            <video id="vid" src="/assets/bg.mp4" autoplay muted loop></video>
-          </div>
-          <div class="white">
-            <p class="nm">Codify</p>
-          </div>
-        </div>
-        <img src="/assets/html.png" alt="" class="logos animation" id="html" />
-        <img
-          src="/assets/github.png"
-          alt=""
-          class="logos animation2"
-          id="github"
-        />
-        <img src="/assets/css.png" alt="" class="logos animation3" id="css" />
+      <img src="/assets/html.png" alt="" class="logos animation" id="html" />
+      <img src="/assets/github.png" alt="" class="logos animation2" id="github" />
+      <img src="/assets/css.png" alt="" class="logos animation3" id="css" />
 
-        <div class="info">
-          <span class="slogan">A platform where all the students can share resources</span
-          ><br />
-          <span class="slogan"
-            >and also obtain the necessary knowledge, notes</span
-          ><br />
-          <span class="slogan">needed to know about coding.</span><br />
-        </div>
+      <div class="info">
+        <span class="slogan">A platform where all the students can share resources</span><br />
+        <span class="slogan">and also obtain the necessary knowledge, notes</span><br />
+        <span class="slogan">needed to know about coding.</span><br />
       </div>
-      <div class="text">
-        <div class="txt1 slide-right">
-          <p>"The Best place to find the most</p>
-        </div>
-        <div class="txt2 slide-right">
-          <p>useful resources for learning."</p>
-        </div>
+    </div>
+    <div class="text">
+      <div class="txt1 slide-right">
+        <p>"The Best place to find the most</p>
       </div>
-      <div class="yt">
-        <span>Popular Youtube Videos:</span>
+      <div class="txt2 slide-right">
+        <p>useful resources for learning."</p>
       </div>
-      <div class="cont3">
-        <div class="videos animation4">
-          <a href="/explore/nem.html">
-            <div id="first" class="smallc">
-              <img
-                class="thumb"
-                src="/assets/dave.JPG"
-                alt="image of the 1st yt thumbnail"
-                class="nail"
-              />
-
-              <div class="time">
-                <p>Time:4hrs</p>
-              </div>
-
-              <div class="title">
-                <p>Course-1 : HTML for beginners</p>
-              </div>
-              <div class="desc">
-                <p>
-                  Get to know about complete HTML by going through this course
-                  created by Dave Gray,a beginner friendly course made for
-                  students.
-                </p>
-              </div>
-            </div>
-          </a>
-          <a href="/explore/nem.html">
-            <div id="second" class="smallc">
-              <img
-                class="thumb"
-                src="/assets/ds.JPG"
-                alt="image of the 2nd yt thumbnail"
-                class="nail"
-              />
-
-              <div class="time">
-                <p>Time:8hrs</p>
-              </div>
-              <div class="title">
-                <p>Course-2 : Data Structures</p>
-              </div>
-              <div class="desc">
-                <p>
-                  Dive deep into learning simple Data Structure concepts by
-                  freecodecamp a beginner friendly course made for college
-                  students.
-                </p>
-              </div>
-            </div>
-          </a>
-          <a href="/explore/nem.html">
-            <div id="third" class="smallc">
-              <img
-                class="thumb"
-                src="/assets/cspy.jpg"
-                alt="image of the 3rd yt thumbnail"
-                class="nail"
-              />
-
-              <div class="time">
-                <p>Time:15hrs</p>
-              </div>
-              <div class="title">
-                <p>Course-3 : CS50 Python course</p>
-              </div>
-              <div class="desc">
-                <p>
-                  Dive deep into the roots of Pyhton learning, by the CS50
-                  course made by Harward university a beginner friendly course
-                  made for college students.
-                </p>
-              </div>
-            </div>
-          </a>
-          <a href="/explore/nem.html">
-            <div id="fourth" class="smallc">
-              <img
-                class="thumb"
-                src="/assets/clang.JPG"
-                alt="image of the 4th yt thumbnail"
-                class="nail"
-              />
-
-              <div class="time">
-                <p>Time:10hrs</p>
-              </div>
-              <div class="title">
-                <p>Course-4 : Complete C language</p>
-              </div>
-              <div class="desc">
-                <p>
-                  Dive deep into learning simple C language made by Apnacollege
-                  a beginner friendly course made for college students.
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="button2">
+    </div>
+    <div class="yt">
+      <span>Popular Youtube Videos:</span>
+    </div>
+    <div class="cont3">
+      <div class="videos animation4">
         <a href="/explore/nem.html">
+          <div id="first" class="smallc">
+            <img class="thumb" src="/assets/dave.JPG" alt="image of the 1st yt thumbnail" class="nail" />
+
+            <div class="time">
+              <p>Time:4hrs</p>
+            </div>
+
+            <div class="title">
+              <p>Course-1 : HTML for beginners</p>
+            </div>
+            <div class="desc">
+              <p>
+                Get to know about complete HTML by going through this course
+                created by Dave Gray,a beginner friendly course made for
+                students.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="/explore/nem.html">
+          <div id="second" class="smallc">
+            <img class="thumb" src="/assets/ds.JPG" alt="image of the 2nd yt thumbnail" class="nail" />
+
+            <div class="time">
+              <p>Time:8hrs</p>
+            </div>
+            <div class="title">
+              <p>Course-2 : Data Structures</p>
+            </div>
+            <div class="desc">
+              <p>
+                Dive deep into learning simple Data Structure concepts by
+                freecodecamp a beginner friendly course made for college
+                students.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="/explore/nem.html">
+          <div id="third" class="smallc">
+            <img class="thumb" src="/assets/cspy.jpg" alt="image of the 3rd yt thumbnail" class="nail" />
+
+            <div class="time">
+              <p>Time:15hrs</p>
+            </div>
+            <div class="title">
+              <p>Course-3 : CS50 Python course</p>
+            </div>
+            <div class="desc">
+              <p>
+                Dive deep into the roots of Pyhton learning, by the CS50
+                course made by Harward university a beginner friendly course
+                made for college students.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="/explore/nem.html">
+          <div id="fourth" class="smallc">
+            <img class="thumb" src="/assets/clang.JPG" alt="image of the 4th yt thumbnail" class="nail" />
+
+            <div class="time">
+              <p>Time:10hrs</p>
+            </div>
+            <div class="title">
+              <p>Course-4 : Complete C language</p>
+            </div>
+            <div class="desc">
+              <p>
+                Dive deep into learning simple C language made by Apnacollege
+                a beginner friendly course made for college students.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="button2">
+      <a href="/explore/nem.html">
         <button>Other YT Videos</button></a>
-      </div>
-      <div class="us">
-        <p>About us :</p>
-      </div>
-      <div class="aboutus">
-        <div class="person" id="person1">
-          <div class="inside">
-            <img
-              src="/assets/me.jpg"
-              alt="The Chosen One"
-              id="me"
-              class="profile"
-            />
-            <ul>
-              <div class="name">
-                <p>Shashank.M.D</p>
-              </div>
-              <div class="role">
-                <p>Head of Creativity</p>
-              </div>
-              <div class="details">
-                <p>
-                  A budding web developer who likes to discover and learn new
-                  things, wanna be a Full-stack developer.
-                </p>
-              </div>
-            </ul>
-          </div>
-        </div>
-        <div class="person" id="person2">
-          <div class="inside">
-            <img
-              src="/assets/nandan.jpg"
-              alt="The manager"
-              id="nandan"
-              class="profile"
-            />
-            <ul>
-              <div class="name">
-                <p>Nandan.A</p>
-              </div>
-              <div class="role">
-                <p>The Lead</p>
-              </div>
-              <div class="details">
-                <p>
-                  A newbie developer thriving to solve complex challenges in
-                  both design and functionality!
-                </p>
-              </div>
-            </ul>
-          </div>
-        </div>
-        <div class="person" id="person3">
-          <div class="inside">
-            <img
-              src="/assets/chethan.jpg"
-              alt="the artist"
-              id="chetan"
-              class="profile"
-            />
-            <ul>
-              <div class="name">
-                <p>Chethan.P</p>
-              </div>
-              <div class="role">
-                <p>The Programmer</p>
-              </div>
-              <div class="details">
-                <p>
-                  Passionate about building efficient solutions, enhancing user
-                  experiences, and exploring new technologies to stay ahead in
-                  the industry.
-                </p>
-              </div>
-            </ul>
-          </div>
-        </div>
-        <div class="person" id="person4">
-          <div class="inside">
-            <img
-              src="/assets/mohith.jpg"
-              alt="Profile manager"
-              id="mohith"
-              class="profile"
-            />
-            <ul>
-              <div class="name">
-                <p>Mohith Kumar</p>
-              </div>
-              <div class="role">
-                <p>Profile manager</p>
-              </div>
-              <div class="details">
-                <p>New web developer with hands-on experience in HTML, CSS, JS and Git. Enthusiastic about learning and contributing to innovative projects.</p>
-              </div>
-            </ul>
-          </div>
-        </div>
-        <div class="person" id="person5">
-          <div class="inside">
-            <img
-              src="/assets/prajwal.jpg"
-              alt="Resource manager"
-              id="prajwal"
-              class="profile"
-            />
-            <ul>
-              <div class="name">
-                <p>Prajwal Gowda</p>
-              </div>
-              <div class="role">
-                <p>Resource manager</p>
-              </div>
-              <div class="details">
-                <p>Junior web developer with a passion for creating responsive, user-friendly websites. Excited to kickstart my career by buidling dynamic and engaging applications.</p>
-              </div>
-            </ul>
-          </div>
-        </div>
-        <div class="person" id="person6">
-          <div class="inside">
-            <img
-              src="/assets/veeresh.JPEG"
-              alt="tester"
-              id="veeresh"
-              class="profile"
-            />
-            <ul>
-              <div class="name">
-                <p>Veeresh.G.V</p>
-              </div>
-              <div class="role">
-                <p>Tester</p>
-              </div>
-              <div class="details">
-                <p>Aspiring web developer, growing knowledge of front-end technologies like HTML, CSS and JS. Eager to build collaborative and impactful web solutions.</p>
-              </div>
-            </ul>
-          </div>
+    </div>
+    <div class="us">
+      <p>About us :</p>
+    </div>
+    <div class="aboutus">
+      <div class="person" id="person1">
+        <div class="inside">
+          <img src="/assets/me.jpg" alt="The Chosen One" id="me" class="profile" />
+          <ul>
+            <div class="name">
+              <p>Shashank.M.D</p>
+            </div>
+            <div class="role">
+              <p>Head of Creativity</p>
+            </div>
+            <div class="details">
+              <p>
+                A budding web developer who likes to discover and learn new
+                things, wanna be a Full-stack developer.
+              </p>
+            </div>
+          </ul>
         </div>
       </div>
-    </main>
-    <footer>
-      <div class="layer1">
-        <div class="element1">
-          <div class="head">
-            <p>Socials</p>
-          </div>
-          <div class="links">
-            <a
-              href="https://www.instagram.com/codify24?utm_source=qr&igsh=MWt3c3Rjb2Y2bDdtcw=="
-              >Instagram</a
-            >
-            <a href="https://x.com/codify1309">Twitter</a>
-            <a href="">Facebook</a>
-          </div>
-        </div>
-        <div class="element2">
-          <div class="head">
-            <p>Contact Info</p>
-          </div>
-          <div class="links">
-            <a href="">+91 1234567890</a>
-            <a href="mailto:codify1309@gmail.com">codify1309@gmail.com</a>
-          </div>
-        </div>
-        <div class="element3">
-          <div class="head">
-            <p>Platforms</p>
-          </div>
-          <div class="links">
-            <a href="">Spotify</a>
-            <a href="">Apple Podcast</a>
-            <a href="">Deezer</a>
-            <a href="">Majelan</a>
-          </div>
-        </div>
-        <div class="element4">
-          <div class="head">
-            <p>Resources</p>
-          </div>
-          <div class="links">
-            <a href="/resource.html">Text books</a>
-            <a href="/resource.html">Notes</a>
-          </div>
+      <div class="person" id="person2">
+        <div class="inside">
+          <img src="/assets/nandan.jpg" alt="The manager" id="nandan" class="profile" />
+          <ul>
+            <div class="name">
+              <p>Nandan.A</p>
+            </div>
+            <div class="role">
+              <p>The Lead</p>
+            </div>
+            <div class="details">
+              <p>
+                A newbie developer thriving to solve complex challenges in
+                both design and functionality!
+              </p>
+            </div>
+          </ul>
         </div>
       </div>
-    </footer>
-  </body>
+      <div class="person" id="person3">
+        <div class="inside">
+          <img src="/assets/chethan.jpg" alt="the artist" id="chetan" class="profile" />
+          <ul>
+            <div class="name">
+              <p>Chethan.P</p>
+            </div>
+            <div class="role">
+              <p>The Programmer</p>
+            </div>
+            <div class="details">
+              <p>
+                Passionate about building efficient solutions, enhancing user
+                experiences, and exploring new technologies to stay ahead in
+                the industry.
+              </p>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="person" id="person4">
+        <div class="inside">
+          <img src="/assets/mohith.jpg" alt="Profile manager" id="mohith" class="profile" />
+          <ul>
+            <div class="name">
+              <p>Mohith Kumar</p>
+            </div>
+            <div class="role">
+              <p>Profile manager</p>
+            </div>
+            <div class="details">
+              <p>New web developer with hands-on experience in HTML, CSS, JS and Git. Enthusiastic about learning and
+                contributing to innovative projects.</p>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="person" id="person5">
+        <div class="inside">
+          <img src="/assets/prajwal.jpg" alt="Resource manager" id="prajwal" class="profile" />
+          <ul>
+            <div class="name">
+              <p>Prajwal Gowda</p>
+            </div>
+            <div class="role">
+              <p>Resource manager</p>
+            </div>
+            <div class="details">
+              <p>Junior web developer with a passion for creating responsive, user-friendly websites. Excited to
+                kickstart my career by buidling dynamic and engaging applications.</p>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="person" id="person6">
+        <div class="inside">
+          <img src="/assets/veeresh.JPEG" alt="tester" id="veeresh" class="profile" />
+          <ul>
+            <div class="name">
+              <p>Veeresh.G.V</p>
+            </div>
+            <div class="role">
+              <p>Tester</p>
+            </div>
+            <div class="details">
+              <p>Aspiring web developer, growing knowledge of front-end technologies like HTML, CSS and JS. Eager to
+                build collaborative and impactful web solutions.</p>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="layer1">
+      <div class="element1">
+        <div class="head">
+          <p>Socials</p>
+        </div>
+        <div class="links">
+          <a href="https://www.instagram.com/codify24?utm_source=qr&igsh=MWt3c3Rjb2Y2bDdtcw==">Instagram</a>
+          <a href="https://x.com/codify1309">Twitter</a>
+          <a href="">Facebook</a>
+        </div>
+      </div>
+      <div class="element2">
+        <div class="head">
+          <p>Contact Info</p>
+        </div>
+        <div class="links">
+          <a href="">+91 1234567890</a>
+          <a href="mailto:codify1309@gmail.com">codify1309@gmail.com</a>
+        </div>
+      </div>
+      <div class="element3">
+        <div class="head">
+          <p>Platforms</p>
+        </div>
+        <div class="links">
+          <a href="">Spotify</a>
+          <a href="">Apple Podcast</a>
+          <a href="">Deezer</a>
+          <a href="">Majelan</a>
+        </div>
+      </div>
+      <div class="element4">
+        <div class="head">
+          <p>Resources</p>
+        </div>
+        <div class="links">
+          <a href="/resource.html">Text books</a>
+          <a href="/resource.html">Notes</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
