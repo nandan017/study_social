@@ -151,6 +151,7 @@ body{
     letter-spacing: 0.5px;
     padding: 0rem;
     font-family: "newtitle";
+    color: aliceblue;
   }
   .question-header {
     font-weight: bold;
@@ -163,6 +164,7 @@ body{
     border-radius: 5px;
     margin-top: 10px;
     margin-left: 20px;
+    color: aliceblue;
   }
   .replies-container{
     border-radius: 8px;
@@ -181,6 +183,7 @@ body{
     border-radius: 5px;
     font-size: 14px;
     font-family: "Martian Mono",monospace;
+    color: aliceblue;
   }
   
   .btn-reply {
