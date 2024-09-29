@@ -7,10 +7,7 @@
     <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
     <link rel="icon" href="../assets/cy24.png">
-    <script type="module" src="profile.js" defer></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"></script>
+    
     <header>
 
         <div class="container1">
@@ -40,7 +37,7 @@
 </head>
 
 <body>
-    <div class="'header">
+    <div class="header">
         <a href="#" class="logo1">Profile</a>
 
 
@@ -48,7 +45,7 @@
     <div class="container">
         <div id="left" class="elements">
             <h3>About me </h3>
-            <p>&ltYour bio&gt</p>
+            <p id="bio">&ltYour bio&gt</p>
 
 
         </div>
@@ -62,35 +59,36 @@
         <div id="right" class="elements">
             <h3>Details </h3>
             <h2>Name:</h2>
-            <p>&ltYour name&gt</p>
+            <p id="name">&ltYour name&gt</p>
             <h2>Age:</h2>
-            <p>&ltAge&gt</p>
+            <p id="age">&ltAge&gt</p>
             <h2>Location:</h2>
-            <p>&ltLocation&gt</p>
+            <p id="location">&ltLocation&gt</p>
             <h2>Socials:</h2>
-            <p>&ltplace your links here&gt</p>
+            <p id="socials">&ltplace your links here&gt</p>
         </div>
 
     </div>
     <div id="pop-overlay" class="overlay">
         <div class="popup">
             <div class="form4-box">
-                <form class="form-4">
+                <form id="edit-profile-form" class="form-4">
                     <span class="title">Edit Profile</span>
                     <span class="subtitle">Craft a profile that speaks for you!</span>
                     <div class="form4-container">
-                        <input type="text" class="input-4" placeholder="Enter your name" required="">
-                        <input type="number" class="input-4" placeholder="Age" required="">
-                        <input type="text" class="input-4" placeholder="Location">
-                        <input type="text" class="input-4" placeholder="About/Bio" required="">
-                        <input type="text" class="input-4" placeholder="Place your social links...">
+                        <input id="edit-name" type="text" class="input-4" placeholder="Enter your name" required="">
+                        <input id="edit-age" type="number" class="input-4" placeholder="Age" required="">
+                        <input id="edit-location" type="text" class="input-4" placeholder="Location">
+                        <input id="edit-bio" type="text" class="input-4" placeholder="About/Bio" required="">
+                        <input id="edit-socials" type="text" class="input-4" placeholder="Place your social links...">
                     </div>
-                    <input type="button" class="submit" value="Submit">
+                    <input type="button" class="submit" value="Save Changes">
                     <input id="logout" type="button" class="submit" value="Logout" onclick="window.location.href='/login/login.html'">
                 </form>
             </div>
         </div>
     </div>
+    <script type="module" src="profile.js"></script>
 </body>
 <footer>
     <div class="layer1">

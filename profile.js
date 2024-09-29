@@ -20,57 +20,63 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+// Reference to the form
+const editProfileForm = document.getElementById('edit-profile-form');
+
 // Fetch and display profile details when user logs in
 onAuthStateChanged(auth,(user) => {
     if(user) {
-        const uid = user.uid;
-        const docRef = doc(db,"users",uid)
-        getDoc(docRef).then((docSnap) => {
-            if(docSnap.exists()){
-                const userData = docSnap.data();
-                document.querySelector("#right p:nth-child(2)").textContent = userData.name || "Your name";
-                document.querySelector("#right p:nth-child(4)").textContent = userData.age || "Age";
-                document.querySelector("#right p:nth-child(6)").textContent = userData.Location || "Location";
-                document.querySelector("#right p:nth-child(8)").textContent = userData.socialLinks || "place your links here";
-                document.querySelector("#left p").textContent = userData.bio || "Your bio";
-            }
-            else {
-                console.log("No profile data found");
+        const userId = user.uid;
+        const userDocRef = doc(db,"users",userId)
+
+        getDoc(userDocRef).then((docSnapshot) => {
+            if(docSnapshot.exists()){
+                const userData = docSnapshot.data();
+                document.getElementById('name').innerText = userData.name;
+                document.getElementById('age').innerText = userData.age;
+                document.getElementById('location').innerText = userData.location;
+                document.getElementById('bio').innerText = userData.bio;
+                document.getElementById('socials').innerText = userData.socials;
             }
         });
     }
     else {
         console.log("No user logged in");
+        alert("User not logged in! Login and try again.")
+        window.location.href = '/login/login.html';
     }
 });
 
 // Handle form submission to update profile
-const form = document.querySelector('.form-4');
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
+editProfileForm.addEventListener('submit',(event) => {
+    event.preventDefault();
 
-  const name = form.querySelector('input[placeholder="Enter your name"]').value;
-  const age = form.querySelector('input[placeholder="Age"]').value;
-  const location = form.querySelector('input[placeholder="Location"]').value;
-  const bio = form.querySelector('input[placeholder="About/Bio"]').value;
-  const socialLinks = form.querySelector('input[placeholder="Place your social links..."]').value;
+    const user = auth.currentUser;
+    if(user) {
+        const userId = user.uid;
+        const updateProfile = {
+            name: document.getElementById('edit-name').value,
+            age: document.getElementById('edit-age').value,
+            location: document.getElementById('edit-location').value,
+            bio: document.getElementById('edit-bio').value,
+            socials: document.getElementById('edit-socials').value,
+        }; 
+        setDoc(doc(db, 'users', userId), updateProfile, {merge:true})
+            .then(() => {
+                alert("Profile updated successfully!");
+                // Optionally refresh the page or update fields in real time
+                document.getElementById('name').innerText = updateProfile.name;
+                document.getElementById('age').innerText = updateProfile.age;
+                document.getElementById('location').innerText = updateProfile.location;
+                document.getElementById('bio').innerText = updateProfile.bio;
+                document.getElementById('socials').innerText = updateProfile.socials;
 
-  const user = auth.currentUser;
-  if (user) {
-    const uid = user.uid;
-    setDoc(doc(db, "users", uid), {
-      name: name,
-      age: age,
-      location: location,
-      bio: bio,
-      socialLinks: socialLinks
-    }).then(() => {
-      alert("Profile updated successfully");
-    }).catch((error) => {
-      console.error("Error updating profile: ", error);
-    });
-  } else {
-    alert("User is not logged in");
-  }
-});
-
+            })
+            .catch((error) => {
+                console.log("Error updating profile:",error);
+            });
+    }
+    else {
+        alert("No user is signed in.")
+    }
+})
