@@ -281,21 +281,23 @@ a{
   gap: 16px;
   text-align: center;
   font-family: "Martian Mono",monospace;
-  background-color: beige;
+  background-color: #000000;
+  border: 1px solid #9082f7;
+  border-radius: 16px;
 }
 
 .title {
   font-weight: bold;
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   font-family: "newtitle";
   letter-spacing: 1px;
-  color: #666;
+  color: #9082f7;
   background-color: transparent;
 }
 
 .subtitle {
-  font-size: 2rem;
-  color: #666;
+  font-size: 2.5rem;
+  color: aliceblue;
   font-family: "newtitle";
   letter-spacing: 0.5px;
   background-color: transparent;
@@ -304,7 +306,7 @@ a{
 .form4-container {
   overflow: hidden;
   border-radius: 8px;
-  background-color: lightgrey;
+  background-color: #333336;
   margin: 1rem 0 .5rem;
   width: 100%;
 }
@@ -317,6 +319,7 @@ a{
   width: 100%;
   border-bottom: 1px solid gray;
   font-size: .9rem;
+  color: aliceblue;
   padding: 8px 15px;
   font-family: "Martian mono",monospace;
 }
