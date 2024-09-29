@@ -7,6 +7,10 @@
     <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
     <link rel="icon" href="../assets/cy24.png">
+    <script type="module" src="profile.js" defer></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"></script>
     <header>
 
         <div class="container1">
@@ -73,7 +77,7 @@
             <div class="form4-box">
                 <form class="form-4">
                     <span class="title">Edit Profile</span>
-                    <span class="subtitle">Let your Codify profile be as good as you!</span>
+                    <span class="subtitle">Craft a profile that speaks for you!</span>
                     <div class="form4-container">
                         <input type="text" class="input-4" placeholder="Enter your name" required="">
                         <input type="number" class="input-4" placeholder="Age" required="">
@@ -82,9 +86,7 @@
                         <input type="text" class="input-4" placeholder="Place your social links...">
                     </div>
                     <input type="button" class="submit" value="Submit">
-                    <a href="login/login.html">
-                        <input id="logout" type="button" class="submit" value="Logout">
-                    </a>
+                    <input id="logout" type="button" class="submit" value="Logout" onclick="window.location.href='/login/login.html'">
                 </form>
             </div>
         </div>

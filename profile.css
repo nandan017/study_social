@@ -50,6 +50,7 @@
 
 #edit-icon{
     height: 2.1rem;
+    cursor: pointer;
 }
 
 button {
@@ -338,4 +339,8 @@ a{
 }
 .form-4 #logout:hover {
     background-color: #d10000;
+  }
+  input #logout.submit{
+    max-width: 25rem;
+    width: 100%;
   }

@@ -14,15 +14,6 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 const questionsRef = database.ref('questions');
-const auth = firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        const email = user.email;
-        console.log('Logged in user email:', email);
-    } else {
-        console.log('No user is signed in');
-    }
-});
-
 
 // Get DOM elements
 const questionsContainer = document.getElementById('questions-container');
@@ -107,28 +98,4 @@ questionsContainer.addEventListener('click', (e) => {
         }
     }
 });
-
-
-
-// Get the currently logged-in user
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        // User is signed in, retrieve their email
-        const email = user.email;
-        console.log('Logged in user email:', email);
-
-        // Now you can use the email in your code, for example:
-        displayUserEmail(email);
-    } else {
-        // No user is signed in
-        console.log('No user is signed in');
-    }
-});
-
-// Function to display the user's email (you can customize this)
-function displayUserEmail(email) {
-    const emailContainer = document.getElementById('email-container');
-    emailContainer.textContent = `Logged in as: ${email}`;
-}
-
 
