@@ -20,7 +20,9 @@ const auth = getAuth(app);
 // Sign up function
 const signUpBtn = document.getElementById('sign-up');
 if (signUpBtn) {
-    signUpBtn.addEventListener('click', () => {
+    signUpBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log("Signup button clicked!")
         const name = document.getElementById('name-input').value;
         const email = document.getElementById('email-input').value;
         const password = document.getElementById('password-input').value;
