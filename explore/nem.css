@@ -248,10 +248,9 @@ svg{
 
 .videos {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
     grid-template-rows: repeat(3,minmax(10vw,auto));
     gap: 2rem;
-    grid-column: span 2;
     max-inline-size: 90vw;
 }
 
@@ -263,7 +262,7 @@ svg{
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    grid-column: span 2;
+   /*  grid-column: span 2; */
 }
 
 .smallc:hover{
@@ -325,7 +324,7 @@ svg{
 
 .videos {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) ;
     gap: 2rem;
 }
 @keyframes pop-up {
@@ -547,9 +546,8 @@ a{
     }
 
     .layer1 {
+        flex-direction: column;
         align-items: center;
-        flex-direction: row;
-        padding: 10vh 3vh;
     }
 
     .smallc {
