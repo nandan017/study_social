@@ -20,7 +20,9 @@ const auth = getAuth(app);
 // Sign up function
 const signUpBtn = document.getElementById('sign-up');
 if (signUpBtn) {
-    signUpBtn.addEventListener('click', () => {
+    signUpBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log("Signup button clicked!")
         const name = document.getElementById('name-input').value;
         const email = document.getElementById('email-input').value;
         const password = document.getElementById('password-input').value;
@@ -29,7 +31,6 @@ if (signUpBtn) {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                window.location.href = '../index.html'
                 // Optionally update profile with name
                 updateProfile(user, { displayName: name })
                     .then(() => {
@@ -39,9 +40,12 @@ if (signUpBtn) {
                         console.error('Error updating profile:', error.message);
                     });
                 console.log('User signed up:', user);
+                alert("Updated! Try logging in.");
+                window.location.href = ("#");
             })
             .catch((error) => {
                 console.error('Error signing up:', error.message);
+                alert("Error signing up/Account already exists.")
             });
     });
 }
@@ -59,12 +63,14 @@ signInBtn.addEventListener('click', () => {
         .then((userCredential) => {
             console.log("loggedin");
             const user = userCredential.user;
-            window.location.href = "../index.html";
+            window.location.href = "../home.html";
             console.log('User signed in:', user);
+            alert("Logged in successfully!");
         })
         .catch((error) => {
             console.log(error.code);
             console.error('Error signing in:', error.message);
+            alert("Error logging in!",error);
         });
 });
 
@@ -75,10 +81,12 @@ googleBtn.addEventListener('click', () => {
     signInWithPopup(auth, provider)
         .then((result) => {
             console.log('Google sign-in:', result.user);
-            window.location.href = '../index.html'
+            alert("Logged in successfully");
+            window.location.href = '../home.html'
         })
         .catch((error) => {
             console.error('Error signing in with Google:', error.message);
+            alert("Error logging in!",error);
         });
 });
 

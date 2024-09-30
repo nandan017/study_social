@@ -70,6 +70,7 @@ editProfileForm.addEventListener('submit',(event) => {
                 document.getElementById('location').innerText = updateProfile.location;
                 document.getElementById('bio').innerText = updateProfile.bio;
                 document.getElementById('socials').innerText = updateProfile.socials;
+                window.location.href = "#";
 
             })
             .catch((error) => {
