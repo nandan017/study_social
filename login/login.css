@@ -9,7 +9,7 @@
 }
 @font-face {
   font-family: "googlesans";
-  src: url(/login/assets/google-sans-webfont/ProductSans-Regular.woff);
+  src: url(assets/google-sans-webfont/ProductSans-Regular.woff);
 }
 *{
     margin: 0%;
@@ -83,7 +83,7 @@
     height: 2rem;
     width: 2rem;
     cursor: pointer;
-    background-image: url(/login/assets/eye-open-svgrepo-com.svg);
+    background-image: url(assets/eye-open-svgrepo-com.svg);
     background-color: transparent;
     color: black;
     background-size: 28px;
@@ -136,7 +136,7 @@ input#google-btn{
   font-weight: 900;
   border-radius: 10px;
   cursor: pointer;
-  background-image: url(/login/assets/icons8-google-logo.svg);
+  background-image: url(assets/icons8-google-logo.svg);
   background-repeat: no-repeat;
   background-position: 10px;
   background-size: 30px;
