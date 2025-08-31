@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("No user logged in");
             alert("User not logged in! Login and try again.");
             // FIX: Corrected the redirect path to be relative
-            window.location.href = '../index.html';
+            window.location.href = 'index.html';
         }
     });
 

@@ -41,7 +41,7 @@ if (signUpBtn) {
                     });
                 console.log('User signed up:', user);
                 alert("Updated! Try logging in.");
-                window.location.href = ("../index.html");
+                window.location.href = ("index.html");
             })
             .catch((error) => {
                 console.error('Error signing up:', error.message);
@@ -69,7 +69,7 @@ signInBtn.addEventListener('click', () => {
         .then((userCredential) => {
             console.log("loggedin");
             const user = userCredential.user;
-            window.location.href = "../home.html";
+            window.location.href = "home.html";
             console.log('User signed in:', user);
             alert("Logged in successfully!");
         })
@@ -88,7 +88,7 @@ googleBtn.addEventListener('click', () => {
         .then((result) => {
             console.log('Google sign-in:', result.user);
             alert("Logged in successfully");
-            window.location.href = '../home.html'
+            window.location.href = 'home.html'
         })
         .catch((error) => {
             console.error('Error signing in with Google:', error.message);

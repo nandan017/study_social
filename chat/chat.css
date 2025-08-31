@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "newtitle";
-  src: url(/fonts/NewTitle_Complete/Fonts/OTF/NewTitle-Regular.otf);
+  src: url(../fonts/NewTitle_Complete/Fonts/OTF/NewTitle-Regular.otf);
 }
 @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');
 *{

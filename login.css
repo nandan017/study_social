@@ -5,11 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @font-face {
   font-family: "Bigwhale";
-  src: url(assets/Bigwhale.otf);
+  src: url(login/assets/Bigwhale.otf);
 }
 @font-face {
   font-family: "googlesans";
-  src: url(assets/google-sans-webfont/ProductSans-Regular.woff);
+  src: url(login/assets/google-sans-webfont/ProductSans-Regular.woff);
 }
 *{
     margin: 0%;
@@ -83,7 +83,7 @@
     height: 2rem;
     width: 2rem;
     cursor: pointer;
-    background-image: url(assets/eye-open-svgrepo-com.svg);
+    background-image: url(login/assets/eye-open-svgrepo-com.svg);
     background-color: transparent;
     color: black;
     background-size: 28px;
@@ -136,7 +136,7 @@ input#google-btn{
   font-weight: 900;
   border-radius: 10px;
   cursor: pointer;
-  background-image: url(assets/icons8-google-logo.svg);
+  background-image: url(login/assets/icons8-google-logo.svg);
   background-repeat: no-repeat;
   background-position: 10px;
   background-size: 30px;
