@@ -41,11 +41,17 @@ if (signUpBtn) {
                     });
                 console.log('User signed up:', user);
                 alert("Updated! Try logging in.");
-                window.location.href = ("#");
+                window.location.href = ("../index.html");
             })
             .catch((error) => {
                 console.error('Error signing up:', error.message);
-                alert("Error signing up/Account already exists.")
+                if (error.code === 'auth/email-already-in-use') {
+                    alert('This email address is already in use. Please sign in.');
+                } else if (error.code === 'auth/weak-password') {
+                    alert('Password should be at least 6 characters long.');
+                } else {
+                    alert('An error occurred during sign-up. Please try again.');
+                }
             });
     });
 }
@@ -56,8 +62,8 @@ signInBtn.addEventListener('click', () => {
     console.log("clicked");
     console.log("clicked");
 
-    const email = document.querySelector('.input[type="text"]').value;
-    const password = document.querySelector('.input[type="password"]').value;
+    const email = document.getElementById('signin-email').value;
+    const password = document.getElementById('signin-password').value;
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -70,7 +76,7 @@ signInBtn.addEventListener('click', () => {
         .catch((error) => {
             console.log(error.code);
             console.error('Error signing in:', error.message);
-            alert("Error logging in!",error);
+            alert("Error logging in: " + error.message);
         });
 });
 

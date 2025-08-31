@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
-    <link rel="icon" href="../assets/cy24.png">
-    
-    <header>
+    <link rel="icon" href="assets/cy24.png">
+</head>
 
+<body>
+    <header>
         <div class="container1">
             <div class="logo">
                 <span>CY24</span>
@@ -27,48 +28,40 @@
                 </div>
                 <a href="#pop-overlay" target="_self">
                     <div class="edit">
-                        <img id="edit-icon" src="/assets/edit-svgrepo-com.svg" alt="">
+                        <img id="edit-icon" src="assets/edit-svgrepo-com.svg" alt="Edit Profile">
                     </div>
                 </a>
-
             </div>
         </div>
     </header>
-</head>
 
-<body>
     <div class="header">
         <a href="#" class="logo1">Profile</a>
-
-
     </div>
+
     <div class="container">
         <div id="left" class="elements">
             <h3>About me </h3>
-            <p id="bio">&ltYour bio&gt</p>
-
-
+            <p id="bio">&lt;Your bio&gt;</p>
         </div>
         <div id="center" class="elements">
             <div class="image">
-                <img src="assets/profile-circle-svgrepo-com (2).svg">
+                <img src="assets/profile-circle-svgrepo-com (2).svg" alt="Profile Picture">
             </div>
         </div>
-
-
         <div id="right" class="elements">
             <h3>Details </h3>
             <h2>Name:</h2>
-            <p id="name">&ltYour name&gt</p>
+            <p id="name">&lt;Your name&gt;</p>
             <h2>Age:</h2>
-            <p id="age">&ltAge&gt</p>
+            <p id="age">&lt;Age&gt;</p>
             <h2>Location:</h2>
-            <p id="location">&ltLocation&gt</p>
+            <p id="location">&lt;Location&gt;</p>
             <h2>Socials:</h2>
-            <p id="socials">&ltplace your links here&gt</p>
+            <p id="socials">&lt;place your links here&gt;</p>
         </div>
-
     </div>
+
     <div id="pop-overlay" class="overlay">
         <div class="popup">
             <div class="form4-box">
@@ -76,62 +69,54 @@
                     <span class="title">Edit Profile</span>
                     <span class="subtitle">Craft a profile that speaks for you!</span>
                     <div class="form4-container">
-                        <input id="edit-name" type="text" class="input-4" placeholder="Enter your name" required="">
-                        <input id="edit-age" type="number" class="input-4" placeholder="Age" required="">
+                        <input id="edit-name" type="text" class="input-4" placeholder="Enter your name" required>
+                        <input id="edit-age" type="number" class="input-4" placeholder="Age" required>
                         <input id="edit-location" type="text" class="input-4" placeholder="Location">
-                        <input id="edit-bio" type="text" class="input-4" placeholder="About/Bio" required="">
+                        <input id="edit-bio" type="text" class="input-4" placeholder="About/Bio" required>
                         <input id="edit-socials" type="text" class="input-4" placeholder="Place your social links...">
                     </div>
                     <input type="submit" class="submit" value="Save Changes">
-                    <input id="logout" type="button" class="submit" value="Logout" onclick="window.location.href='../login/index.html'">
+                    <input id="logout" type="button" class="submit" value="Logout" onclick="window.location.href='index.html'">
                 </form>
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="layer1">
+            <div class="element1">
+                <div class="head"><p>Socials</p></div>
+                <div class="links">
+                    <a href="https://www.instagram.com/codify24?utm_source=qr&igsh=MWt3c3Rjb2Y2bDdtcw==">Instagram</a>
+                    <a href="https://x.com/codify1309">𝕏</a>
+                    <a href="">Facebook</a>
+                </div>
+            </div>
+            <div class="element2">
+                <div class="head"><p>Contact Info</p></div>
+                <div class="links">
+                    <a href="mailto:codify1309@gmail.com">codify1309@gmail.com</a>
+                </div>
+            </div>
+            <div class="element3">
+                <div class="head"><p>Platforms</p></div>
+                <div class="links">
+                    <a href="">Spotify</a>
+                    <a href="">Apple Podcast</a>
+                    <a href="">Deezer</a>
+                    <a href="">Majelan</a>
+                </div>
+            </div>
+            <div class="element4">
+                <div class="head"><p>Resources</p></div>
+                <div class="links">
+                    <a href="">Images</a>
+                    <a href="">Fonts</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script type="module" src="profile.js"></script>
 </body>
-<footer>
-    <div class="layer1">
-        <div class="element1">
-            <div class="head">
-                <p>Socials</p>
-            </div>
-            <div class="links">
-                <a href="https://www.instagram.com/codify24?utm_source=qr&igsh=MWt3c3Rjb2Y2bDdtcw==">Instagram</a>
-                <a href="https://x.com/codify1309">𝕏</a>
-                <a href="">Facebook</a>
-            </div>
-        </div>
-        <div class="element2">
-            <div class="head">
-                <p>Contact Info</p>
-            </div>
-            <div class="links">
-                <a href="mailto:codify1309@gmail.com">codify1309@gmail.com</a>
-            </div>
-        </div>
-        <div class="element3">
-            <div class="head">
-                <p>Platforms</p>
-            </div>
-            <div class="links">
-                <a href="">Spotify</a>
-                <a href="">Apple Podcast</a>
-                <a href="">Deezer</a>
-                <a href="">Majelan</a>
-            </div>
-        </div>
-        <div class="element4">
-            <div class="head">
-                <p>Resources</p>
-            </div>
-            <div class="links">
-                <a href="">Images</a>
-                <a href="">Fonts</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
 </html>

@@ -1,8 +1,10 @@
-// Replace with your Firebase project configuration
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getDatabase, ref, push, onChildAdded, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
 const firebaseConfig = {
     apiKey: "AIzaSyCEzKxTwb0t-J6H_bwoto8z3PFJwhd6EBs",
     authDomain: "codify24-52659.firebaseapp.com",
-    databaseURL: "https://codify24-52659-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "codify24-52659",
     storageBucket: "codify24-52659.appspot.com",
     messagingSenderId: "442850822241",
@@ -10,92 +12,109 @@ const firebaseConfig = {
     measurementId: "G-X5Z5TMR7BH"
 };
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
-const questionsRef = database.ref('questions');
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
 
-// Get DOM elements
 const questionsContainer = document.getElementById('questions-container');
 const questionInput = document.getElementById('question-input');
 const postQuestionButton = document.getElementById('post-question-button');
+let currentUser = null;
 
-// Function to display questions and replies
+// Check user's login status
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        currentUser = user;
+        postQuestionButton.disabled = false;
+        questionInput.placeholder = `Ask a question as ${user.displayName || 'Anonymous'}...`;
+    } else {
+        currentUser = null;
+        postQuestionButton.disabled = true;
+        questionInput.placeholder = 'Please log in to ask a question.';
+        window.location.href = '../index.html'; // Redirect to login
+    }
+});
+
+// Function to create and display a question card
 function displayQuestion(questionId, questionData) {
     const questionCard = document.createElement('div');
     questionCard.classList.add('question-card');
+    questionCard.dataset.questionId = questionId;
+
+    const repliesCount = questionData.replies ? Object.keys(questionData.replies).length : 0;
     
-    // Count the number of replies
-    const replies = questionData.replies ? Object.values(questionData.replies) : [];
-    const repliesCount = replies.length;
-
-    let repliesHTML = '';
-    if (repliesCount > 0) {
-        for (const reply of replies) {
-            repliesHTML += `<div class="reply">${reply.text}</div>`;
-        }
-    }
-
     questionCard.innerHTML = `
-        <h5>${questionData.text}</h5>
-        <button class="btn-reply" data-question-id="${questionId}">
-          <img src="/chat/assets/reply-all-svgrepo-com.svg" id="reply-mark" alt=""> Reply (${repliesCount})
-        </button>
-        <div class="replies-container">${repliesHTML}</div>
-        <div class="reply-area mt-2">
+        <p class="question-author">Asked by: <strong>${questionData.authorName || 'Anonymous'}</strong></p>
+        <h5 class="question-text">${questionData.text}</h5>
+        <button class="btn-reply">Reply (${repliesCount})</button>
+        <div class="replies-container" style="display: none;"></div>
+        <div class="reply-area" style="display: none;">
             <textarea class="reply-input" placeholder="Write your reply..."></textarea>
-            <button class="submit-reply-button" data-question-id="${questionId}">
-              <img src="/chat/assets/sent-svgrepo-com.svg" id="sent-mark" alt=""> Submit Reply
-            </button>
+            <button class="submit-reply-button">Submit Reply</button>
         </div>
     `;
+    questionsContainer.prepend(questionCard); // Add new questions to the top
 
-    questionsContainer.appendChild(questionCard);
+    // Listen for replies to this specific question
+    const repliesRef = ref(db, `questions/${questionId}/replies`);
+    onChildAdded(repliesRef, (snapshot) => {
+        const replyData = snapshot.val();
+        const repliesContainer = questionCard.querySelector('.replies-container');
+        const replyElement = document.createElement('div');
+        replyElement.classList.add('reply');
+        replyElement.innerHTML = `<strong>${replyData.authorName || 'Anonymous'}:</strong> ${replyData.text}`;
+        repliesContainer.appendChild(replyElement);
+    });
 }
 
-
-// Function to handle posting new questions
+// Post a new question
 postQuestionButton.addEventListener('click', () => {
     const questionText = questionInput.value.trim();
-    if (questionText !== '') {
-        questionsRef.push({
-            text: questionText
+    if (questionText && currentUser) {
+        const questionsRef = ref(db, 'questions');
+        push(questionsRef, {
+            text: questionText,
+            authorId: currentUser.uid,
+            authorName: currentUser.displayName,
+            timestamp: serverTimestamp()
         });
-        questionInput.value = ''; // Clear input field after posting
+        questionInput.value = '';
     }
 });
 
-// Listen for new questions being added
-questionsRef.on('child_added', (snapshot) => {
-    const questionData = snapshot.val();
-    const questionId = snapshot.key;
-    displayQuestion(questionId, questionData);
-});
-
-// Function to handle replying to a question
-// Function to handle replying to a question
+// Event delegation for reply buttons and submitting replies
 questionsContainer.addEventListener('click', (e) => {
-    if (e.target.classList.contains('btn-reply')) {
-        const replyArea = e.target.nextElementSibling.nextElementSibling;
-        replyArea.style.display = replyArea.style.display === 'block' ? 'none' : 'block'; // Toggle reply area
+    const target = e.target;
+    const questionCard = target.closest('.question-card');
+    if (!questionCard) return;
+
+    const questionId = questionCard.dataset.questionId;
+
+    if (target.classList.contains('btn-reply')) {
+        const replyArea = questionCard.querySelector('.reply-area');
+        const repliesContainer = questionCard.querySelector('.replies-container');
+        replyArea.style.display = replyArea.style.display === 'block' ? 'none' : 'block';
+        repliesContainer.style.display = 'block'; // Always show replies when toggling
     }
 
-    if (e.target.classList.contains('submit-reply-button')) {
-        const questionId = e.target.getAttribute('data-question-id');
-        const replyInput = e.target.previousElementSibling;
+    if (target.classList.contains('submit-reply-button')) {
+        const replyInput = questionCard.querySelector('.reply-input');
         const replyText = replyInput.value.trim();
-        if (replyText !== '') {
-            const repliesRef = questionsRef.child(questionId).child('replies');
-            repliesRef.push({
-                text: replyText
+        if (replyText && currentUser) {
+            const repliesRef = ref(db, `questions/${questionId}/replies`);
+            push(repliesRef, {
+                text: replyText,
+                authorId: currentUser.uid,
+                authorName: currentUser.displayName,
+                timestamp: serverTimestamp()
             });
-            replyInput.value = ''; // Clear input field after submitting reply
-            
-            // Update reply count on button
-            const btnReply = e.target.closest('.question-card').querySelector('.btn-reply');
-            const currentCount = parseInt(btnReply.textContent.match(/\d+/)) || 0;
-            btnReply.textContent = `Reply (${currentCount + 1})`; // Update count
+            replyInput.value = '';
         }
     }
 });
 
+// Listen for all new questions
+const questionsRef = ref(db, 'questions');
+onChildAdded(questionsRef, (snapshot) => {
+    displayQuestion(snapshot.key, snapshot.val());
+});
