@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getDatabase, ref, push, onChildAdded, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { getDatabase, ref, push, onChildAdded, serverTimestamp, off } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCEzKxTwb0t-J6H_bwoto8z3PFJwhd6EBs",
@@ -20,18 +20,42 @@ const questionsContainer = document.getElementById('questions-container');
 const questionInput = document.getElementById('question-input');
 const postQuestionButton = document.getElementById('post-question-button');
 let currentUser = null;
+const questionsRef = ref(db, 'questions');
 
-// Check user's login status
+// This function will be called to start listening for messages
+function startMessageListener() {
+    // Clear any old messages before loading new ones
+    questionsContainer.innerHTML = ''; 
+    
+    onChildAdded(questionsRef, (snapshot) => {
+        displayQuestion(snapshot.key, snapshot.val());
+    });
+}
+
+// This function will stop listening and clear the UI
+function stopMessageListener() {
+    off(questionsRef); // Detach all listeners from the questions reference
+    questionsContainer.innerHTML = '<p>Please log in to see the chat.</p>';
+}
+
+// Main authentication logic
 onAuthStateChanged(auth, (user) => {
     if (user) {
+        // User is logged in
         currentUser = user;
         postQuestionButton.disabled = false;
         questionInput.placeholder = `Ask a question as ${user.displayName || 'Anonymous'}...`;
+        
+        // **THE FIX IS HERE:** We only start listening for messages *after* confirming the user is logged in.
+        startMessageListener(); 
     } else {
+        // User is logged out
         currentUser = null;
         postQuestionButton.disabled = true;
         questionInput.placeholder = 'Please log in to ask a question.';
-        window.location.href = '../index.html'; // Redirect to login
+        
+        // Stop listening for messages and clear the chat
+        stopMessageListener(); 
     }
 });
 
@@ -71,7 +95,6 @@ function displayQuestion(questionId, questionData) {
 postQuestionButton.addEventListener('click', () => {
     const questionText = questionInput.value.trim();
     if (questionText && currentUser) {
-        const questionsRef = ref(db, 'questions');
         push(questionsRef, {
             text: questionText,
             authorId: currentUser.uid,
@@ -94,7 +117,7 @@ questionsContainer.addEventListener('click', (e) => {
         const replyArea = questionCard.querySelector('.reply-area');
         const repliesContainer = questionCard.querySelector('.replies-container');
         replyArea.style.display = replyArea.style.display === 'block' ? 'none' : 'block';
-        repliesContainer.style.display = 'block'; // Always show replies when toggling
+        repliesContainer.style.display = 'block';
     }
 
     if (target.classList.contains('submit-reply-button')) {
@@ -111,10 +134,4 @@ questionsContainer.addEventListener('click', (e) => {
             replyInput.value = '';
         }
     }
-});
-
-// Listen for all new questions
-const questionsRef = ref(db, 'questions');
-onChildAdded(questionsRef, (snapshot) => {
-    displayQuestion(snapshot.key, snapshot.val());
 });
