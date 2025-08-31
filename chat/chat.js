@@ -5,7 +5,7 @@ import { getDatabase, ref, push, onChildAdded, serverTimestamp, off } from "http
 const firebaseConfig = {
     apiKey: "AIzaSyCEzKxTwb0t-J6H_bwoto8z3PFJwhd6EBs",
     authDomain: "codify24-52659.firebaseapp.com",
-    databaseURL: "https://codify24-52659-default-rtdb.asia-southeast1.firebasedatabase.app",
+    databaseURL: "https://codify24-52659-default-rtdb.asia-southeast1.firebasedatabase.app", // Correct URL
     projectId: "codify24-52659",
     storageBucket: "codify24-52659.appspot.com",
     messagingSenderId: "442850822241",
@@ -21,42 +21,34 @@ const questionsContainer = document.getElementById('questions-container');
 const questionInput = document.getElementById('question-input');
 const postQuestionButton = document.getElementById('post-question-button');
 let currentUser = null;
-const questionsRef = ref(db, 'questions');
+const messagesRef = ref(db, 'chats'); // <-- CHANGED FROM 'questions'
 
 // This function will be called to start listening for messages
 function startMessageListener() {
-    // Clear any old messages before loading new ones
-    questionsContainer.innerHTML = ''; 
-    
-    onChildAdded(questionsRef, (snapshot) => {
+    questionsContainer.innerHTML = '';
+    onChildAdded(messagesRef, (snapshot) => {
         displayQuestion(snapshot.key, snapshot.val());
     });
 }
 
 // This function will stop listening and clear the UI
 function stopMessageListener() {
-    off(questionsRef); // Detach all listeners from the questions reference
+    off(messagesRef);
     questionsContainer.innerHTML = '<p>Please log in to see the chat.</p>';
 }
 
 // Main authentication logic
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        // User is logged in
         currentUser = user;
         postQuestionButton.disabled = false;
         questionInput.placeholder = `Ask a question as ${user.displayName || 'Anonymous'}...`;
-        
-        // **THE FIX IS HERE:** We only start listening for messages *after* confirming the user is logged in.
-        startMessageListener(); 
+        startMessageListener();
     } else {
-        // User is logged out
         currentUser = null;
         postQuestionButton.disabled = true;
         questionInput.placeholder = 'Please log in to ask a question.';
-        
-        // Stop listening for messages and clear the chat
-        stopMessageListener(); 
+        stopMessageListener();
     }
 });
 
@@ -78,10 +70,10 @@ function displayQuestion(questionId, questionData) {
             <button class="submit-reply-button">Submit Reply</button>
         </div>
     `;
-    questionsContainer.prepend(questionCard); // Add new questions to the top
+    questionsContainer.prepend(questionCard);
 
-    // Listen for replies to this specific question
-    const repliesRef = ref(db, `questions/${questionId}/replies`);
+    // Listen for replies to this specific message
+    const repliesRef = ref(db, `chats/${questionId}/replies`); // <-- CHANGED FROM 'questions'
     onChildAdded(repliesRef, (snapshot) => {
         const replyData = snapshot.val();
         const repliesContainer = questionCard.querySelector('.replies-container');
@@ -92,11 +84,11 @@ function displayQuestion(questionId, questionData) {
     });
 }
 
-// Post a new question
+// Post a new message
 postQuestionButton.addEventListener('click', () => {
     const questionText = questionInput.value.trim();
     if (questionText && currentUser) {
-        push(questionsRef, {
+        push(messagesRef, {
             text: questionText,
             authorId: currentUser.uid,
             authorName: currentUser.displayName,
@@ -125,7 +117,7 @@ questionsContainer.addEventListener('click', (e) => {
         const replyInput = questionCard.querySelector('.reply-input');
         const replyText = replyInput.value.trim();
         if (replyText && currentUser) {
-            const repliesRef = ref(db, `questions/${questionId}/replies`);
+            const repliesRef = ref(db, `chats/${questionId}/replies`); // <-- CHANGED FROM 'questions'
             push(repliesRef, {
                 text: replyText,
                 authorId: currentUser.uid,
