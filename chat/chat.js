@@ -5,6 +5,7 @@ import { getDatabase, ref, push, onChildAdded, serverTimestamp, off } from "http
 const firebaseConfig = {
     apiKey: "AIzaSyCEzKxTwb0t-J6H_bwoto8z3PFJwhd6EBs",
     authDomain: "codify24-52659.firebaseapp.com",
+    databaseURL: "https://codify24-52659-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "codify24-52659",
     storageBucket: "codify24-52659.appspot.com",
     messagingSenderId: "442850822241",
